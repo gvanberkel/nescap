@@ -24,7 +24,7 @@ class CapsuleColumns {
         0,
         GridCell(
           height: 80,
-          width: 160,
+          width: 170,
           title: true,
           child: FlatButton.icon(
               onPressed: () {},

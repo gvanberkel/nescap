@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nescap/data/capsule_data_schema.dart';
 import 'data/capsule_data.dart';
 import 'widgets/gridCell.dart';
 import 'widgets/valueBar.dart';
@@ -7,18 +8,16 @@ class CapsuleRows {
   static List<Row> get() {
     return [
       name(),
-      grams(),
       decaf(),
       cupSize(),
+      grams(),
+      price(),
       intensity(),
       acidity(),
       bitterness(),
       body(),
       roasting(),
-      roastingNotes(),
-      aromaticProfileNotes(),
-      story(),
-      origin(),
+      descriptions(),
     ];
   }
 
@@ -113,7 +112,10 @@ class CapsuleRows {
       children: addFieldName(
           Capsules.get().map((capsule) {
             return GridCell(
-              child: Center(child: Text(capsule.gramsPer10Pack == 0 ? '' : '${capsule.gramsPer10Pack.toInt().toString()}g')),
+              child: Center(
+                  child: Text(capsule.gramsPer10Pack == 0
+                      ? ''
+                      : '${capsule.gramsPer10Pack.toInt().toString()}g')),
             );
           }).toList(),
           'Grams per 10 pack'),
@@ -165,6 +167,22 @@ class CapsuleRows {
     );
   }
 
+  static List<Widget> roastingNotes(CapsuleData capsule) {
+    var list = List<Widget>();
+    if (capsule.flavourProfile.roastingNotes == '') return list;
+
+    list.add(Text(
+      'Roasting',
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+    ));
+
+    list.add(Text(capsule.flavourProfile.roastingNotes));
+
+    return list;
+  }
+
   static Row acidity() {
     return Row(
       children: addFieldName(
@@ -195,64 +213,78 @@ class CapsuleRows {
     );
   }
 
-
-
-  static Row roastingNotes() {
+  static Row price() {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
-            return GridCell(
-              height: 400,
-              child: Text(capsule.flavourProfile.roastingNotes),
-            );
-          }).toList(),
-          'Roasting',
-          height: 400),
+        Capsules.get().map((capsule) {
+          return GridCell(
+            child: Center(child: Text(capsule.price.toString())),
+          );
+        }).toList(),
+        'Price',
+      ),
     );
   }
 
-  static Row aromaticProfileNotes() {
+  static List<Widget> aromaticProfileNotes(CapsuleData capsule) {
+    var list = List<Widget>();
+
+    if (capsule.flavourProfile.aromaticProfileNotes == '') return list;
+
+    list.add(Text(
+      'Aromatic profile',
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+    ));
+    list.add(Text(capsule.flavourProfile.aromaticProfileNotes));
+
+    return list;
+  }
+
+  static Row descriptions() {
     return Row(
       children: addFieldName(
           Capsules.get().map((capsule) {
+            var list = List<Widget>();
+
+            list.addAll(story(capsule));
+            list.addAll(origin(capsule));
+            list.addAll(roastingNotes(capsule));
+            list.addAll(aromaticProfileNotes(capsule));
+
             return GridCell(
-              height: 400,
-              child: Text(capsule.flavourProfile.aromaticProfileNotes),
+              height: 2500,
+              child: Column(
+                children: list,
+              ),
             );
           }).toList(),
-          'Aromatic Profile',
-          height: 400),
+          '',
+          height: 2500),
     );
   }
 
-
-  static Row story() {
-    return Row(
-      children: addFieldName(
-          Capsules.get().map((capsule) {
-            return GridCell(
-              height: 700,
-              child: Text(capsule.story),
-            );
-          }).toList(),
-          'Story',
-          height: 700),
-    );
+  static List<Widget> story(CapsuleData capsule) {
+    var list = List<Widget>();
+    if (capsule.story == '') return list;
+    list.add(Text(capsule.story));
+    return list;
   }
 
-  
-  static Row origin() {
-    return Row(
-      children: addFieldName(
-          Capsules.get().map((capsule) {
-            return GridCell(
-              height: 200,
-              child: Text(capsule.orgin),
-            );
-          }).toList(),
-          'Origin',
-          height: 200),
-    );
+  static List<Widget> origin(CapsuleData capsule) {
+    var list = List<Widget>();
+    if (capsule.orgin == '') return list;
+
+    list.add(Text(
+      'Origin',
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+    ));
+
+    list.add(Text(capsule.orgin));
+    return list;
   }
 
   static Row name() {
@@ -264,7 +296,8 @@ class CapsuleRows {
               height: 80,
             );
           }).toList(),
-          'Name', height: 80),
+          'Name',
+          height: 80),
     );
   }
 
@@ -273,7 +306,7 @@ class CapsuleRows {
     list.insert(
         0,
         GridCell(
-          width: 160,
+          width: 170,
           height: height,
           title: true,
           child: Text(fieldName),

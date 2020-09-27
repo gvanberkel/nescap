@@ -12,11 +12,10 @@ class Capsules {
             'Ispirazione Firenze Arpeggio is a blend of Latin American Arabicas centered around an inherently malty Costa Rican coffee. All the other coffees used are also Arabica, and that unified taste is as magnetic as Florence during the Renaissance.',
         caffeine: true,
         gramsPer10Pack: 55,
+        price: 85,
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
           acidity: 2,
@@ -37,11 +36,10 @@ class Capsules {
         mainImageFileName: 'arpeggio-decaf.png',
         caffeine: false,
         gramsPer10Pack: 55,
+        price: 90,
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
           acidity: 2,
@@ -62,9 +60,7 @@ class Capsules {
         caffeine: true,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -91,7 +87,6 @@ class Capsules {
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -119,7 +114,6 @@ class Capsules {
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -145,7 +139,6 @@ class Capsules {
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -172,10 +165,8 @@ class Capsules {
         caffeine: true,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
           lungo: true,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
           intensity: 6,
@@ -201,7 +192,6 @@ class Capsules {
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -231,9 +221,7 @@ class Capsules {
         caffeine: true,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -244,39 +232,31 @@ class Capsules {
             AromaticProfile.DelicatelyToasted
           ],
           roastingNotes: '''
-              Our coffee roasters give a light roast and a coarse grind for these
-              Latin American and East African coffees, ensuring that all that heart and soul 
-              shines through in this espresso coffee capsule.
+              Our coffee roasters give a light roast and a coarse grind for these Latin American and East African coffees, ensuring that all that heart and soul shines through in this espresso coffee capsule.
               ''',
           aromaticProfileNotes: '''
-              In the cup you’ll taste that delicate and balanced pairing of fruity flavors on lightly toasted cereal notes.
-              Cosi’s low in bitterness, roastiness and body - it’s all about the classic aromatics and harmonious balance.
-              Mild cereal and lightly toasted notes enhanced by subtle fruity notes.
+              In the cup you’ll taste that delicate and balanced pairing of fruity flavors on lightly toasted cereal notes. Cosi’s low in bitterness, roastiness and body - it’s all about the classic aromatics and harmonious balance. Mild cereal and lightly toasted notes enhanced by subtle fruity notes.
               ''',
         ),
       ),
       CapsuleData(
         name: 'Envivo Lungo',
         story: '',
+        price: 90,
         mainImageFileName: 'envivo.png',
         caffeine: true,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
-          espresso: false,
           lungo: true,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
           intensity: 9,
           roastingNotes: '''
-            Nespresso Envivo Lungo’s power comes from its full body, the high caffeine from the Mexican Robusta,
-            but also the roast. It’s an intense coffee. We medium roast the Robusta and dark roast the Indian Arabica.
+            Nespresso Envivo Lungo’s power comes from its full body, the high caffeine from the Mexican Robusta, but also the roast. It’s an intense coffee. We medium roast the Robusta and dark roast the Indian Arabica.
             ''',
           aromaticProfileNotes: '''
-            After Envivo Lungo awakens your senses, you’ll catch the heady tones of aromatic woods,
-            and the notes of caramel and gingerbread as the Washed Robusta and Indian Arabica strike a balance. 
-            Starting up with this long black coffee, you’ll feel like you danced into day.
+            After Envivo Lungo awakens your senses, you’ll catch the heady tones of aromatic woods, and the notes of caramel and gingerbread as the Washed Robusta and Indian Arabica strike a balance. Starting up with this long black coffee, you’ll feel like you danced into day.
           ''',
           aromaticNotes: [AromaticNotes.Intense],
           aromaticProfile: [
@@ -300,20 +280,18 @@ class Capsules {
         flavourProfile: FlavourProfile(
             intensity: 4,
             roastingNotes: '''
-              A light and short roast keeps the more delicate notes alive and singing through the wilder, 
-              heavier aromatics of this Ethiopian coffee.
-          ''',
+              A light and short roast keeps the more delicate notes alive and singing through the wilder, heavier aromatics of this Ethiopian coffee.
+              ''',
             aromaticProfileNotes: '''
-            The traditional natural process adds a unique taste - rich, and incredibly aromatic. 
-            In Master Origin Ethiopia with dry processed Arabica you’ll catch anything from the 
-            warming aroma of ripe fruit to delicate orange blossom notes.
-          ''',
+            The traditional natural process adds a unique taste - rich, and incredibly aromatic. In Master Origin Ethiopia with dry processed Arabica you’ll catch anything from the warming aroma of ripe fruit to delicate orange blossom notes.
+            ''',
             aromaticNotes: [AromaticNotes.Balanced],
             aromaticProfile: [AromaticProfile.Flowery, AromaticProfile.Bright]),
       ),
       CapsuleData(
         name: 'Fortissio Lungo',
         story: '',
+        price: 90,
         mainImageFileName: 'fortissio.png',
         caffeine: true,
         gramsPer10Pack: 5.5,
@@ -326,15 +304,11 @@ class Capsules {
         flavourProfile: FlavourProfile(
           intensity: 8,
           roastingNotes: '''
-            The Monsooned Arabica gets a darker roast to enhance its body and cereal notes.
-            A lighter roast of the washed Colombian coffee means all the classic finer aromatics stay in the balance of Fortissio Lungo.
-            A very particular grind keeps this long black coffee smooth and rounded.
+            The Monsooned Arabica gets a darker roast to enhance its body and cereal notes. A lighter roast of the washed Colombian coffee means all the classic finer aromatics stay in the balance of Fortissio Lungo. A very particular grind keeps this long black coffee smooth and rounded.
           ''',
           aromaticProfileNotes: '''
-            This Arabica coffee blend is as rich and deep as the metallic green Nespresso coffee capsule its housed in.
-            The richness of the Fortissio Lungo pod is all in the balance of the coffee origins, their distinct processing methods, and the distinguished roasts.
-            Sweet cereal and malty toasted notes lie beneath a spray of acidity and a lively bitterness in this Lungo coffee.
-          ''',
+            This Arabica coffee blend is as rich and deep as the metallic green Nespresso coffee capsule its housed in. The richness of the Fortissio Lungo pod is all in the balance of the coffee origins, their distinct processing methods, and the distinguished roasts. Sweet cereal and malty toasted notes lie beneath a spray of acidity and a lively bitterness in this Lungo coffee.
+            ''',
           aromaticNotes: [AromaticNotes.Intense],
           aromaticProfile: [AromaticProfile.Rich, AromaticProfile.FullBodied],
         ),
@@ -356,13 +330,10 @@ class Capsules {
             aromaticNotes: [AromaticNotes.Balanced],
             aromaticProfile: [AromaticProfile.Intense, AromaticProfile.Spicy],
             roastingNotes: '''
-            We split roast this coffee with a medium and a slightly shorter roast. 
-            This coffee roasting process on this Arabica Robusta blend keeps the distinct Arabica and Robusta characteristics alive.
+            We split roast this coffee with a medium and a slightly shorter roast. This coffee roasting process on this Arabica Robusta blend keeps the distinct Arabica and Robusta characteristics alive.
             ''',
             aromaticProfileNotes: '''
-            Master Origin India with Robusta Monsoon owes its wild taste to the unique monsooning process. When the coffee beans spend
-            months face to the wind, they develop a distinct woody, savory, spicy taste - as thick and lingering as sea mist. 
-            A powerful cup. Using Robusta along with the Arabica coffee really gives it that heavy, syrupy body.
+            Master Origin India with Robusta Monsoon owes its wild taste to the unique monsooning process. When the coffee beans spend months face to the wind, they develop a distinct woody, savory, spicy taste - as thick and lingering as sea mist. A powerful cup. Using Robusta along with the Arabica coffee really gives it that heavy, syrupy body.
             '''),
       ),
       CapsuleData(
@@ -382,50 +353,27 @@ class Capsules {
           aromaticNotes: [AromaticNotes.Balanced],
           aromaticProfile: [AromaticProfile.Rich, AromaticProfile.Woody],
           roastingNotes: '''
-            The coffee roasting process we use is a split roast method - with a medium and slightly shorter roast. 
-            Split roasting this Sumatra coffee gives a great complexity of aromatic notes in the cup.
+            The coffee roasting process we use is a split roast method - with a medium and slightly shorter roast.  Split roasting this Sumatra coffee gives a great complexity of aromatic notes in the cup.
             ''',
           aromaticProfileNotes: '''
-            It’s the coffee production, the unique coffee farming methods, that make this a classic Indonesia coffee - Master Origin Indonesia
-            wet-hulled Arabica has a thick and rich, velvety body. It’s wild in its cured tobacco notes and you’ll 
-            get whiffs of tropical woody aromas.
+            It’s the coffee production, the unique coffee farming methods, that make this a classic Indonesia coffee - Master Origin Indonesia wet-hulled Arabica has a thick and rich, velvety body. It’s wild in its cured tobacco notes and you’ll get whiffs of tropical woody aromas.
             ''',
         ),
       ),
       CapsuleData(
         name: 'Ispirazione Palermo Kazaar',
         story: '''
-          Ispirazione Palermo Kazaar is inspired by this city’s multicultural character. 
-          Sicily once lay on the path of the ancient coffee trade and this crossroads of African 
-          and Arabic influence shaped their dark and Robusta-heavy cup profile. Ispirazione Palermo Kazaar captures 
-          the African and Arabian dark coffee influences and creates an intensely dark roast from the south that highlights
-          the wild and spicy character of this blend. This coffee will delight you with its exceptional intensity, 
-          its audacious bitterness, and those peppery notes leaping out through the thick, syrupy body. 
-          The daring intensity of Ispirazione Palermo Kazaar comes from its two unwashed Robustas – a classic way to get a strong cup. 
-          A washed Robusta adds a creamy texture. Rounded off with a touch of Latin American Arabica, 
-          Ispirazione Palermo Kazaar is split roasted so each coffee’s characteristics can shine through. 
-          The Robustas bring audacious bitterness, body, and peppery notes. 
-          The Arabica lends sweetness to the blend.
+          Ispirazione Palermo Kazaar is inspired by this city’s multicultural character. Sicily once lay on the path of the ancient coffee trade and this crossroads of African and Arabic influence shaped their dark and Robusta-heavy cup profile. Ispirazione Palermo Kazaar captures the African and Arabian dark coffee influences and creates an intensely dark roast from the south that highlights the wild and spicy character of this blend. This coffee will delight you with its exceptional intensity, its audacious bitterness, and those peppery notes leaping out through the thick, syrupy body. The daring intensity of Ispirazione Palermo Kazaar comes from its two unwashed Robustas – a classic way to get a strong cup. A washed Robusta adds a creamy texture. Rounded off with a touch of Latin American Arabica, Ispirazione Palermo Kazaar is split roasted so each coffee’s characteristics can shine through. The Robustas bring audacious bitterness, body, and peppery notes. The Arabica lends sweetness to the blend.
           ''',
         mainImageFileName: 'kazaar.png',
         caffeine: true,
         gramsPer10Pack: 60,
         orgin: '''
-            Ispirazione Palermo Kazaar ’s daring intensity comes from blending four distinct coffees – 
-            it speaks to the multicultural heritage of Palermo. It’s a coastal city sitting on the edge of three continents, 
-            with centuries of Arabian, Byzantine and Spanish cultural influence shaping it. We picked four bold coffees to pay homage to this history. 
-            Traditionally you’d look only to unwashed Robusta to bring brute strength. 
-            And that’s what you’ll find dominating the coffee blends of southern Italy. 
-            But our washed Robusta is a rare find that balances out the Ispirazione Palermo Kazaar coffee pod with its clean taste and creamy texture. 
-            These Robusta farmers process their coffee with the same care that washed Arabica farmers do. 
-            It helps add that elegant touch to the robustness in Ispirazione Palermo Kazaar . 
-            The other coffees are Latin American Arabicas that lend a natural sweetness to Ispirazione Palermo Kazaar.
-        ''',
+            Ispirazione Palermo Kazaar ’s daring intensity comes from blending four distinct coffees – it speaks to the multicultural heritage of Palermo. It’s a coastal city sitting on the edge of three continents, with centuries of Arabian, Byzantine and Spanish cultural influence shaping it. We picked four bold coffees to pay homage to this history. Traditionally you’d look only to unwashed Robusta to bring brute strength. And that’s what you’ll find dominating the coffee blends of southern Italy. But our washed Robusta is a rare find that balances out the Ispirazione Palermo Kazaar coffee pod with its clean taste and creamy texture. These Robusta farmers process their coffee with the same care that washed Arabica farmers do. It helps add that elegant touch to the robustness in Ispirazione Palermo Kazaar . The other coffees are Latin American Arabicas that lend a natural sweetness to Ispirazione Palermo Kazaar.
+            ''',
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
             acidity: 1,
@@ -434,20 +382,11 @@ class Capsules {
             intensity: 12,
             roasting: 5,
             roastingNotes: '''
-            We split roast the coffees to bring out distinct qualities of each coffee in the Ispirazione Palermo Kazaar blend. 
-            Most of the Arabica and Robusta get an intense roast to develop their bitterness and body. 
-            We give the unwashed Robusta a shorter and lighter roast to bring out some of the finer aromatic notes. 
-            Ispirazione Palermo Kazaar ’s roast style reflects the Arab and African influence you see across southern Italy’s dark 
-            and intense coffees.
-          ''',
+            We split roast the coffees to bring out distinct qualities of each coffee in the Ispirazione Palermo Kazaar blend. Most of the Arabica and Robusta get an intense roast to develop their bitterness and body. We give the unwashed Robusta a shorter and lighter roast to bring out some of the finer aromatic notes. Ispirazione Palermo Kazaar ’s roast style reflects the Arab and African influence you see across southern Italy’s dark and intense coffees.
+            ''',
             aromaticProfileNotes: '''
-            Did you catch the scent of spice drifting across the waters from Africa? 
-            You’ll taste the audacious bitterness and peppery notes leaping out through the thick syrupy body. 
-            Together the Arabica and Robusta balance each other out in this espresso. It reflects both the Palermo coastal lifestyle 
-            and its rich history. You can sit back in the sun and enjoy your Ispirazione Palermo Kazaar on the terrace, 
-            with everything from the food on your plate to the architecture surrounding you whispering the histories of all
-            who’ve passed through Palermo.
-          ''',
+            Did you catch the scent of spice drifting across the waters from Africa? You’ll taste the audacious bitterness and peppery notes leaping out through the thick syrupy body. Together the Arabica and Robusta balance each other out in this espresso. It reflects both the Palermo coastal lifestyle and its rich history. You can sit back in the sun and enjoy your Ispirazione Palermo Kazaar on the terrace, with everything from the food on your plate to the architecture surrounding you whispering the histories of all who’ve passed through Palermo.
+            ''',
             aromaticNotes: [
               AromaticNotes.Intense
             ],
@@ -459,12 +398,11 @@ class Capsules {
       CapsuleData(
         name: 'Linizio Lungo',
         story: '',
+        price: 90,
         mainImageFileName: 'linizio.png',
         caffeine: true,
         gramsPer10Pack: 50,
         cupSize: CupSize(
-          ristretto: false,
-          espresso: false,
           lungo: true,
           milk: true,
         ),
@@ -473,36 +411,20 @@ class Capsules {
           aromaticProfile: [AromaticProfile.Round, AromaticProfile.Smooth],
           intensity: 4,
           roastingNotes: '''
-            The Brazilian coffee is lightly roasted - it keeps it smooth and with all the Bourbon variety’s malty cereal notes intact.
-            The washed Colombian coffee beans gets a short roast to release all its finer aromatics.
-            A fine grind adds a glimmer of intensity to this harmonious Lungo coffee.
+            The Brazilian coffee is lightly roasted - it keeps it smooth and with all the Bourbon variety’s malty cereal notes intact. The washed Colombian coffee beans gets a short roast to release all its finer aromatics. A fine grind adds a glimmer of intensity to this harmonious Lungo coffee.
           ''',
           aromaticProfileNotes: '''
-            The Linizio Lungo Arabica coffee blend is remarkably rounded and smooth.
-            You can’t miss the warming notes of malty cereal that shine through this blend of South American sunshine. That’s early joy.
-          ''',
+            The Linizio Lungo Arabica coffee blend is remarkably rounded and smooth. You can’t miss the warming notes of malty cereal that shine through this blend of South American sunshine. That’s early joy.
+            ''',
         ),
       ),
       CapsuleData(
         name: 'Ispirazione Napoli',
         story: '''
-          Ispirazione Napoli is inspired by the intense dark coffee seen in this city. 
-          A coffee in Naples is more than just a coffee, it’s a deep-rooted ritual held by the locals. 
-          It’s home to the Neapolitan flip coffee pot that turned aristocratic coffee into everyman’s daily habit. 
-          It’s home to the suspended coffee tradition of buying two coffees but drinking one and leaving the receipt for the 
-          second to be claimed later by someone less well-off. City of grit and beauty, it’s home to short, dark, strong and creamy coffee. 
-          We crafted Ispirazione Napoli to honor the city’s rich coffee tradition and the popular bond it creates. 
-          It takes real skill to roast to the intense degree they do in Naples. The boldness of Ispirazione Napoli‘s 
-          roast endeavors to pay tribute to the expertise of the local roasters from Italy’s coffee capital. 
-          We created Ispirazione Napoli to be our darkest and most intense roast to reflect this traditional Neapolitan coffee. 
-          We carefully selected beans that could stand up to this degree of roasting. 
-          Ispirazione Napoli delivers an extremely thick body, a creamy mouthfeel, and a delicious bitter note that lingers in its aftertaste.
+          Ispirazione Napoli is inspired by the intense dark coffee seen in this city. A coffee in Naples is more than just a coffee, it’s a deep-rooted ritual held by the locals. It’s home to the Neapolitan flip coffee pot that turned aristocratic coffee into everyman’s daily habit. It’s home to the suspended coffee tradition of buying two coffees but drinking one and leaving the receipt for the second to be claimed later by someone less well-off. City of grit and beauty, it’s home to short, dark, strong and creamy coffee. We crafted Ispirazione Napoli to honor the city’s rich coffee tradition and the popular bond it creates. It takes real skill to roast to the intense degree they do in Naples. The boldness of Ispirazione Napoli‘s roast endeavors to pay tribute to the expertise of the local roasters from Italy’s coffee capital. We created Ispirazione Napoli to be our darkest and most intense roast to reflect this traditional Neapolitan coffee. We carefully selected beans that could stand up to this degree of roasting. Ispirazione Napoli delivers an extremely thick body, a creamy mouthfeel, and a delicious bitter note that lingers in its aftertaste.
           ''',
         orgin: '''
-          We created Ispirazione Napoli as a blend of Robusta from Uganda touched with Arabcia from. 
-          We carefully selected coffees that could stand up to the intense roasting this blend calls for – 
-          bold coffees that would develop the gritty yet beautiful aromas, tastes, and textures that reflect Naples’ 
-          deep-rooted coffee history and traditions.
+          We created Ispirazione Napoli as a blend of Robusta from Uganda touched with Arabcia from. We carefully selected coffees that could stand up to the intense roasting this blend calls for – bold coffees that would develop the gritty yet beautiful aromas, tastes, and textures that reflect Naples’ deep-rooted coffee history and traditions.
           ''',
         mainImageFileName: 'napoli.png',
         caffeine: true,
@@ -510,8 +432,6 @@ class Capsules {
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
           acidity: 1,
@@ -525,18 +445,10 @@ class Capsules {
             AromaticProfile.Creamy
           ],
           roastingNotes: '''
-            Ispirazione Napoli’s very dark and intense roast reflects Naples’ traditional dark roasting method. 
-            Long ago, you could walk the narrow lanes of Naples and catch the bold aroma of this roast as Neapolitans 
-            roast their coffee in the ground floor homes that opened out into the street. 
-            During this deep roast, the coffee beans develop gritty yet beautiful characteristics. 
-            This is reflected in a thick, velvety body, the creamy mouthfeel, and the delicious bitter note. 
-            It takes real skill to roast to such a degree, and the boldness of Ispirazione Napoli’s roast endeavors 
-            to be an homage to the skill we’ve long seen in the Italian capital of coffee.
+            Ispirazione Napoli’s very dark and intense roast reflects Naples’ traditional dark roasting method. Long ago, you could walk the narrow lanes of Naples and catch the bold aroma of this roast as Neapolitans roast their coffee in the ground floor homes that opened out into the street. During this deep roast, the coffee beans develop gritty yet beautiful characteristics. This is reflected in a thick, velvety body, the creamy mouthfeel, and the delicious bitter note. It takes real skill to roast to such a degree, and the boldness of Ispirazione Napoli’s roast endeavors to be an homage to the skill we’ve long seen in the Italian capital of coffee.
             ''',
           aromaticProfileNotes: '''
-            Ispirazione Napoli pays tribute to the short, strong and dark espressos of this southern Italian coastal city – 
-            a thing of grit and beauty. It’s a velvety, creamy cup with an extremely thick body and a kiss of pleasant bitterness 
-            in its aftertaste.
+            Ispirazione Napoli pays tribute to the short, strong and dark espressos of this southern Italian coastal city – a thing of grit and beauty. It’s a velvety, creamy cup with an extremely thick body and a kiss of pleasant bitterness in its aftertaste.
             ''',
         ),
       ),
@@ -547,10 +459,8 @@ class Capsules {
         caffeine: true,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
           lungo: true,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
             intensity: 5,
@@ -558,8 +468,7 @@ class Capsules {
             Split roasting Master Origin Nicaragua with a medium and a slightly shorter roast keeps these Nicaraguan coffees in balance.
             ''',
             aromaticProfileNotes: '''
-            Master Origin Nicaragua with ‘Black-Honey’ processed Arabica is a nectarous coffee - it has a satiny 
-            smooth texture and warming sweet cereal notes. Its distinct sweetness comes from the rare Black-Honey process.
+            Master Origin Nicaragua with ‘Black-Honey’ processed Arabica is a nectarous coffee - it has a satiny smooth texture and warming sweet cereal notes. Its distinct sweetness comes from the rare Black-Honey process.
           ''',
             aromaticNotes: [
               AromaticNotes.Balanced
@@ -572,35 +481,17 @@ class Capsules {
       CapsuleData(
         name: 'Ispirazione Ristretto Italiano',
         story: '''
-          Inspired by the ambassador of all Italian coffees, we chose not to imitate but to roast our own version. 
-          The ristretto is the essence of Italy’s iconic coffee culture. It’s not reflective of any one city – it’s Italy. 
-          It’s the fashion, the art, the cuisine – it’s the consistent elegance and excellence of Italy as a whole. 
-          Inspired by this ambassador of all Italian coffees, we chose not to imitate but to roast our own version. 
-          Ispirazione Ristretto Italiano is a blend of diverse Arabica and Robustas – a contrasting bouquet from around the world – 
-          together they recreate the iconic Italian taste. Ispirazione Ristretto Italiano is a medium-dark roast. 
-          In one short, sharp sip, this blend reveals all its intensity and complexity of aromas. 
-          It’s a roasty and intense coffee accented by fruity notes and a hint of acidity dancing through. 
-          It’s a profile worthy of an ambassador – a coffee that explains Italians’ passion for coffee and makes sense 
-          of why it’s ingrained in daily life.
+          Inspired by the ambassador of all Italian coffees, we chose not to imitate but to roast our own version. The ristretto is the essence of Italy’s iconic coffee culture. It’s not reflective of any one city – it’s Italy. It’s the fashion, the art, the cuisine – it’s the consistent elegance and excellence of Italy as a whole. Inspired by this ambassador of all Italian coffees, we chose not to imitate but to roast our own version. Ispirazione Ristretto Italiano is a blend of diverse Arabica and Robustas – a contrasting bouquet from around the world – together they recreate the iconic Italian taste. Ispirazione Ristretto Italiano is a medium-dark roast. In one short, sharp sip, this blend reveals all its intensity and complexity of aromas. It’s a roasty and intense coffee accented by fruity notes and a hint of acidity dancing through. It’s a profile worthy of an ambassador – a coffee that explains Italians’ passion for coffee and makes sense of why it’s ingrained in daily life.
           ''',
         mainImageFileName: 'ristretto.png',
         caffeine: true,
         gramsPer10Pack: 57,
         orgin: '''
-        Italians say coffee is all about the four Ms of miscela, macinazione, macchina, and mano. 
-        Crafting Ispirazione Ristretto Italiano with respect for this Italian classic begins with the blend – the miscela. 
-        Ispirazione Ristretto Italiano is a sophisticated recipe of coffees - both Arabica and Robusta - 
-        that each lends its distinct personality to create this iconic Italian taste. 
-        We crafted it to reflect the elegance and excellence of Italian culture and coffee. 
-        On top of a neutral base of Brazilian Arabica comes a dash of Robusta from South India. 
-        It adds a kick to Ispirazione Ristretto Italiano. The best of South American and East African Arabicas 
-        add a hint of a crisp fruit note to the Ristretto Italiano.
+        Italians say coffee is all about the four Ms of miscela, macinazione, macchina, and mano. Crafting Ispirazione Ristretto Italiano with respect for this Italian classic begins with the blend – the miscela. Ispirazione Ristretto Italiano is a sophisticated recipe of coffees - both Arabica and Robusta - that each lends its distinct personality to create this iconic Italian taste. We crafted it to reflect the elegance and excellence of Italian culture and coffee. On top of a neutral base of Brazilian Arabica comes a dash of Robusta from South India. It adds a kick to Ispirazione Ristretto Italiano. The best of South American and East African Arabicas add a hint of a crisp fruit note to the Ristretto Italiano.
         ''',
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
           acidity: 3,
@@ -609,8 +500,7 @@ class Capsules {
           intensity: 10,
           roasting: 4,
           roastingNotes: '''
-            Split roasting means you can taste what each coffee brings to the cup. 
-            The long-roasted Robusta coffee gives Ispirazione Ristretto Italiano its body, its roastiness, and its cocoa bitterness. 
+            Split roasting means you can taste what each coffee brings to the cup. The long-roasted Robusta coffee gives Ispirazione Ristretto Italiano its body, its roastiness, and its cocoa bitterness. 
             Putting the Arabica coffees through a quick roast keeps their bright acidity and fruity notes alive and gives 
             Ispirazione Ristretto Italiano more in the cup. We celebrate Italy’s rich history of master blenders and roasters in 
             Ispirazione Ristretto Italiano.
@@ -643,6 +533,7 @@ class Capsules {
           It’s a roasty and intense coffee accented by fruity notes and a hint of acidity dancing through. It’s a profile worthy of an ambassador – 
           a coffee that explains Italians’ passion for coffee and makes sense of why it’s ingrained in daily life.
           ''',
+        price: 90,
         mainImageFileName: 'ristretto-decaf.png',
         caffeine: false,
         gramsPer10Pack: 57,
@@ -659,8 +550,6 @@ class Capsules {
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
           acidity: 3,
@@ -705,10 +594,8 @@ class Capsules {
         caffeine: true,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
           lungo: true,
-          milk: false,
         ),
         orgin: '''
           There’s a precious process behind the spicy, woody and cocoa character of Aged Sumatra, and it’s the fruit 
@@ -746,10 +633,8 @@ class Capsules {
         caffeine: true,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
           lungo: true,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
           acidity: 2,
@@ -780,7 +665,6 @@ class Capsules {
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -810,8 +694,6 @@ class Capsules {
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
-          lungo: false,
-          milk: false,
         ),
         orgin: '''
           Coffee first came to Italy through the port of Venice. The Venetians developed a finely tuned ability to know their green, unroasted coffee beans and became master blenders. It wasn’t long before Italy’s first coffee shops and coffee houses sprung up here – many with their own roasters serving up their own blends. We wanted to honor this distinct heritage by crafting the Ispirazione Venezia blend to reflect this creativity and know-how. One of Italy’s biggest coffee imports is Brazilian Arabica, and so our experts began here. We blended in reputable, high-grown Arabicas from Central and South America with malty and fruit profiles that develop beautifully during roasting. We chose them because they bring the delicate aromas and rounded taste northern Italian coffee is known for.
@@ -840,10 +722,9 @@ class Capsules {
         story: '',
         mainImageFileName: 'vivalto.png',
         caffeine: true,
+        price: 90,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
-          espresso: false,
           lungo: true,
           milk: true,
         ),
@@ -870,11 +751,10 @@ class Capsules {
         story: '',
         mainImageFileName: 'vivalto-decaf.png',
         caffeine: false,
+        price: 90,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -897,9 +777,7 @@ A short roast unfolds the sweet biscuit notes of the Brazilian Arabica. The fine
         caffeine: true,
         gramsPer10Pack: 0,
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
-          lungo: false,
           milk: true,
         ),
         flavourProfile: FlavourProfile(
@@ -926,10 +804,8 @@ A short roast unfolds the sweet biscuit notes of the Brazilian Arabica. The fine
           Zimbabwe’s high mountains and cool temperatures make it ideal for growing coffee. Back in the 1990s when the country’s production peaked at around 15’000 tons of coffee, its quality was said to rival Kenyan coffee.
         ''',
         cupSize: CupSize(
-          ristretto: false,
           espresso: true,
           lungo: true,
-          milk: false,
         ),
         flavourProfile: FlavourProfile(
           acidity: 3,
