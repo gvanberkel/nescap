@@ -500,17 +500,10 @@ class Capsules {
           intensity: 10,
           roasting: 4,
           roastingNotes: '''
-            Split roasting means you can taste what each coffee brings to the cup. The long-roasted Robusta coffee gives Ispirazione Ristretto Italiano its body, its roastiness, and its cocoa bitterness. 
-            Putting the Arabica coffees through a quick roast keeps their bright acidity and fruity notes alive and gives 
-            Ispirazione Ristretto Italiano more in the cup. We celebrate Italy’s rich history of master blenders and roasters in 
-            Ispirazione Ristretto Italiano.
+            Split roasting means you can taste what each coffee brings to the cup. The long-roasted Robusta coffee gives Ispirazione Ristretto Italiano its body, its roastiness, and its cocoa bitterness. Putting the Arabica coffees through a quick roast keeps their bright acidity and fruity notes alive and gives Ispirazione Ristretto Italiano more in the cup. We celebrate Italy’s rich history of master blenders and roasters in Ispirazione Ristretto Italiano.
           ''',
           aromaticProfileNotes: '''
-            A roasty and intense coffee but with fruity notes and a hint of acidity dancing through the blend – 
-            Ispirazione Ristretto Italiano is mysterious and magnetic in its complexity. It’s a profile worthy of an ambassador – 
-            a coffee that explains Italians’ passion for coffee and makes sense of why it’s ingrained in daily life. 
-            Extracted to the classic 25 ml, you’ll soon see how right the Italians are – this drop of deliciousness shows 
-            how less can truly be more.
+            A roasty and intense coffee but with fruity notes and a hint of acidity dancing through the blend – Ispirazione Ristretto Italiano is mysterious and magnetic in its complexity. It’s a profile worthy of an ambassador – a coffee that explains Italians’ passion for coffee and makes sense of why it’s ingrained in daily life. Extracted to the classic 25 ml, you’ll soon see how right the Italians are – this drop of deliciousness shows how less can truly be more.
           ''',
           aromaticNotes: [AromaticNotes.Intense],
           aromaticProfile: [
@@ -522,30 +515,14 @@ class Capsules {
       CapsuleData(
         name: 'Ispirazione Ristretto Italiano Decaffeinato',
         story: '''
-          Inspired by the ambassador of all Italian coffees, we chose not to imitate but to roast our own version. 
-          The ristretto is the essence of Italy’s iconic coffee culture. It’s not reflective of any one city – it’s Italy. 
-          It’s the fashion, the art, the cuisine – it’s the consistent elegance and excellence of Italy as a whole. 
-          Inspired by this ambassador of all Italian coffees, we chose not to imitate but to roast our own version. 
-          Ispirazione Ristretto Italiano Decaffeinato is our classic with two twists. Just as with Ispirazione Ristretto Italiano Decaffeinato 
-          is a blend of diverse Arabica and Robustas – a contrasting bouquet from around the world – together they 
-          recreate the iconic Italian taste – even after decaffeination. Ispirazione Ristretto Italiano Decaffeinato is a medium-dark roast. 
-          In one short, sharp sip, this blend reveals all its intensity and complexity of aromas. 
-          It’s a roasty and intense coffee accented by fruity notes and a hint of acidity dancing through. It’s a profile worthy of an ambassador – 
-          a coffee that explains Italians’ passion for coffee and makes sense of why it’s ingrained in daily life.
+          Inspired by the ambassador of all Italian coffees, we chose not to imitate but to roast our own version. The ristretto is the essence of Italy’s iconic coffee culture. It’s not reflective of any one city – it’s Italy. It’s the fashion, the art, the cuisine – it’s the consistent elegance and excellence of Italy as a whole. Inspired by this ambassador of all Italian coffees, we chose not to imitate but to roast our own version. Ispirazione Ristretto Italiano Decaffeinato is our classic with two twists. Just as with Ispirazione Ristretto Italiano Decaffeinato is a blend of diverse Arabica and Robustas – a contrasting bouquet from around the world – together they recreate the iconic Italian taste – even after decaffeination. Ispirazione Ristretto Italiano Decaffeinato is a medium-dark roast. In one short, sharp sip, this blend reveals all its intensity and complexity of aromas. It’s a roasty and intense coffee accented by fruity notes and a hint of acidity dancing through. It’s a profile worthy of an ambassador – a coffee that explains Italians’ passion for coffee and makes sense of why it’s ingrained in daily life.
           ''',
         price: 90,
         mainImageFileName: 'ristretto-decaf.png',
         caffeine: false,
         gramsPer10Pack: 57,
         orgin: '''
-          Italians say coffee is all about the four Ms of miscela, macinazione, macchina, and mano. 
-          Crafting Ispirazione Ristretto Italiano Decaffeinato with respect for this Italian classic begins with the blend – the miscela. 
-          Nespresso Ristretto Decaffeinato is a sophisticated recipe of decaffeinated coffees - both Arabica and Robusta - 
-          that each lends its distinct personality to create this iconic Italian taste. 
-          We crafted it to reflect the elegance and excellence of Italian culture and coffee. 
-          On top of a neutral base of Brazilian Arabica comes a dash of Robusta from South India. 
-          It adds a kick to make Ispirazione Ristretto Italiano Decaffeinato our most intense tasting decaf coffee pod. 
-          The best of South American and East African Arabicas add a hint of a crisp fruit note to Ispirazione Ristretto Italiano Decaffeinato.
+          Italians say coffee is all about the four Ms of miscela, macinazione, macchina, and mano. Crafting Ispirazione Ristretto Italiano Decaffeinato with respect for this Italian classic begins with the blend – the miscela. Nespresso Ristretto Decaffeinato is a sophisticated recipe of decaffeinated coffees - both Arabica and Robusta - that each lends its distinct personality to create this iconic Italian taste. We crafted it to reflect the elegance and excellence of Italian culture and coffee. On top of a neutral base of Brazilian Arabica comes a dash of Robusta from South India. It adds a kick to make Ispirazione Ristretto Italiano Decaffeinato our most intense tasting decaf coffee pod. The best of South American and East African Arabicas add a hint of a crisp fruit note to Ispirazione Ristretto Italiano Decaffeinato.
           ''',
         cupSize: CupSize(
           ristretto: true,
@@ -558,18 +535,10 @@ class Capsules {
           intensity: 10,
           roasting: 4,
           roastingNotes: '''
-            Slow split roasts of these decaffeinated Arabica and Robusta coffees develop all the aromatics and give 
-            Ispirazione Ristretto Italiano Decaffeinato its rich, roasted taste. The Italian barista’s second M is the macinazione – 
-            a fine grind helps create that iconic Italian taste – it’s intense and profoundly hefty on your tongue. 
-            We celebrate Italy’s rich history of master blenders and roasters in Ispirazione Ristretto Italiano Decaffeinato.
+            Slow split roasts of these decaffeinated Arabica and Robusta coffees develop all the aromatics and give Ispirazione Ristretto Italiano Decaffeinato its rich, roasted taste. The Italian barista’s second M is the macinazione – a fine grind helps create that iconic Italian taste – it’s intense and profoundly hefty on your tongue. We celebrate Italy’s rich history of master blenders and roasters in Ispirazione Ristretto Italiano Decaffeinato.
           ''',
           aromaticProfileNotes: '''
-            Ispirazione Ristretto Italiano Decaffeinato - like the original Ispirazione Ristretto Italiano pod - 
-            is boldly roasty but balanced out by soft cocoa notes. 
-            You may catch some of the subtle acidity and fruity notes that make this Nespresso Decaf capsule so mysteriously complex. 
-            It’s a profile worthy of an ambassador – a coffee that explains Italians’ passion for coffee and makes sense of 
-            why it’s ingrained in daily life. 
-            Extracted to the classic 25 ml, you’ll soon see how right the Italians are – this drop of deliciousness shows how less can truly be more.
+            Ispirazione Ristretto Italiano Decaffeinato - like the original Ispirazione Ristretto Italiano pod - is boldly roasty but balanced out by soft cocoa notes. You may catch some of the subtle acidity and fruity notes that make this Nespresso Decaf capsule so mysteriously complex. It’s a profile worthy of an ambassador – a coffee that explains Italians’ passion for coffee and makes sense of why it’s ingrained in daily life. Extracted to the classic 25 ml, you’ll soon see how right the Italians are – this drop of deliciousness shows how less can truly be more.
           ''',
           aromaticNotes: [AromaticNotes.Intense],
           aromaticProfile: [
@@ -581,14 +550,7 @@ class Capsules {
       CapsuleData(
         name: 'Aged Sumatra',
         story: '''
-          High up around Gayo Mountain, in the Aceh province of the island of Sumatra, the farmers practice the giling basah 
-          method of processing coffee, much as they do across Indonesia. They remove both the coffee cherry’s fruit flesh 
-          and parchment to leave the naked bean to dry. But then these Aceh farmers add a meticulous twist. 
-          Over 3-5 years the warehoused beans, stacked in breathable jute bags, alternately moisten and dry with nature’s rhythms. 
-          These craftsmen take great care to continuously re-bag the coffee beans to ensure even drying. 
-          The coupling of Indonesia’s giling basah method with the meticulous aging over several years develops this coffee’s precious profile. 
-          Master Origin Aged Sumatra is woody and spicy in character and has an unmistakably smooth and velvety mouthfeel. 
-          The coffee hums with elegantly complex cocoa and sweet caramel notes.
+          High up around Gayo Mountain, in the Aceh province of the island of Sumatra, the farmers practice the giling basah method of processing coffee, much as they do across Indonesia. They remove both the coffee cherry’s fruit flesh and parchment to leave the naked bean to dry. But then these Aceh farmers add a meticulous twist. Over 3-5 years the warehoused beans, stacked in breathable jute bags, alternately moisten and dry with nature’s rhythms. These craftsmen take great care to continuously re-bag the coffee beans to ensure even drying. The coupling of Indonesia’s giling basah method with the meticulous aging over several years develops this coffee’s precious profile. Master Origin Aged Sumatra is woody and spicy in character and has an unmistakably smooth and velvety mouthfeel. The coffee hums with elegantly complex cocoa and sweet caramel notes.
         ''',
         mainImageFileName: 'sumatra.png',
         caffeine: true,
@@ -598,9 +560,7 @@ class Capsules {
           lungo: true,
         ),
         orgin: '''
-          There’s a precious process behind the spicy, woody and cocoa character of Aged Sumatra, and it’s the fruit 
-          of the craftsman’s care that began years ago. It begins with Indonesia’s signature giling basah method. 
-          The beans are then carefully aged over more than three years – until they deliver an unforgettable cup reflecting nature’s rhythms.
+          There’s a precious process behind the spicy, woody and cocoa character of Aged Sumatra, and it’s the fruit of the craftsman’s care that began years ago. It begins with Indonesia’s signature giling basah method. The beans are then carefully aged over more than three years – until they deliver an unforgettable cup reflecting nature’s rhythms.
         ''',
         flavourProfile: FlavourProfile(
             acidity: 1,
@@ -609,10 +569,7 @@ class Capsules {
             intensity: 7,
             roasting: 4,
             roastingNotes: '''
-              This single-origin coffee is roasted utilizing the split-roast technique: the first split is roasted to a 
-              dark degree to enhance body, complexity and to balance with the wild notes that come from the natural (dry) process. 
-              The second split is roasted more lightly, reaching a medium-dark degree that allows us to explore the tropical fruit
-              character while still preserving the round mouthfeel and general intensity.
+              This single-origin coffee is roasted utilizing the split-roast technique: the first split is roasted to a dark degree to enhance body, complexity and to balance with the wild notes that come from the natural (dry) process. The second split is roasted more lightly, reaching a medium-dark degree that allows us to explore the tropical fruit character while still preserving the round mouthfeel and general intensity.
             ''',
             aromaticProfileNotes: '''
               The coupling of Indonesia’s giling basah method with the meticulous aging over several years develops this coffee’s precious profile. Aged Sumatra is distinctly woody and spicy with a roasted character and complex notes of cocoa and tobacco.
@@ -673,9 +630,7 @@ class Capsules {
           body: 2,
           roasting: 2,
           roastingNotes: '''
-              Split roast, the Brazilian coffee is lightly roasted to keep it smooth and with all its malted cereal notes intact, 
-              while the majority of the Colombian coffee beans get a short roast to release all their finer aromatics. 
-              A fine grind adds a glimmer of intensity to this harmonious coffee.
+              Split roast, the Brazilian coffee is lightly roasted to keep it smooth and with all its malted cereal notes intact, while the majority of the Colombian coffee beans get a short roast to release all their finer aromatics. A fine grind adds a glimmer of intensity to this harmonious coffee.
             ''',
           aromaticProfileNotes: '''
               Warming vanilla on a base of malted cereal – that’s Nespresso BARISTA CREATIONS Vanilla Éclair. This flavoured coffee capsule is round and smooth with a silky mouthfeel that may remind you of vanilla eclairs.
@@ -731,12 +686,10 @@ class Capsules {
         flavourProfile: FlavourProfile(
             intensity: 4,
             roastingNotes: '''
-            Short, dark roasting the Brazil develops Vivalto Lungo’s classic roastiness.
-            A lighter roast on the washed coffees holds onto their finer aromatics.
+            Short, dark roasting the Brazil develops Vivalto Lungo’s classic roastiness. A lighter roast on the washed coffees holds onto their finer aromatics.
           ''',
             aromaticProfileNotes: '''
-            The blue Nespresso coffee pod - Vivalto Lungo - is a seductively roasty coffee -
-            but dancing through those toasted cereal notes you’ll taste the bright florals in beautiful balance.
+            The blue Nespresso coffee pod - Vivalto Lungo - is a seductively roasty coffee - but dancing through those toasted cereal notes you’ll taste the bright florals in beautiful balance.
           ''',
             aromaticNotes: [
               AromaticNotes.Fruity
@@ -760,8 +713,7 @@ class Capsules {
         flavourProfile: FlavourProfile(
           intensity: 4,
           roastingNotes: '''
-           Volluto Decaffeinato is split roasted to bring out the unique characteristics of each coffee.
-A short roast unfolds the sweet biscuit notes of the Brazilian Arabica. The finer fruit aromatics you taste from the Colombian Arabica coffee are developed in its longer light roast.
+           Volluto Decaffeinato is split roasted to bring out the unique characteristics of each coffee. A short roast unfolds the sweet biscuit notes of the Brazilian Arabica. The finer fruit aromatics you taste from the Colombian Arabica coffee are developed in its longer light roast.
           ''',
           aromaticProfileNotes: '''
             This Nespresso decaf espresso is sweet and smooth, rich and round, just like Volluto - but without caffeine. The balanced light taste of Volluto Decaffeinato makes for very sunny living.
@@ -783,8 +735,7 @@ A short roast unfolds the sweet biscuit notes of the Brazilian Arabica. The fine
         flavourProfile: FlavourProfile(
           intensity: 4,
           roastingNotes: '''
-            Volluto is medium roasted - not too hot, not too long - and given a medium grind to keep it all in harmony.
-            This roast turns the Brazil’s cereal notes to sweet biscuit and keeps the fruity notes of the Colombia alive. The Volluto coffee capsule comes out a rounded and elegantly balanced espresso.
+            Volluto is medium roasted - not too hot, not too long - and given a medium grind to keep it all in harmony. This roast turns the Brazil’s cereal notes to sweet biscuit and keeps the fruity notes of the Colombia alive. The Volluto coffee capsule comes out a rounded and elegantly balanced espresso.
           ''',
           aromaticProfileNotes: '''
             Like a fresh, oven-baked brioche, Nespresso Volluto has an irresistible perfume and comforting sweet biscuit notes. The Nespresso gold capsule’s Colombian coffee brings its fresh red fruit notes that enliven the blend - that’s sunny living.

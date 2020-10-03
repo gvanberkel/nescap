@@ -18,13 +18,13 @@ class MyApp extends StatelessWidget {
       title: 'NesCap Capsule Explorer',
       debugShowCheckedModeBanner: false,
       theme: nesCapTheme.themeData,
-      home: MyHomePage(),
+      home: CapsuleGrid(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key}) : super(key: key);
+class CapsuleGrid extends StatelessWidget {
+  CapsuleGrid({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

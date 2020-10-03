@@ -113,7 +113,7 @@ class CapsuleRows {
           Capsules.get().map((capsule) {
             return GridCell(
               child: Center(
-                  child: Text(capsule.gramsPer10Pack == 0
+                  child: SelectableText(capsule.gramsPer10Pack == 0
                       ? ''
                       : '${capsule.gramsPer10Pack.toInt().toString()}g')),
             );
@@ -178,7 +178,7 @@ class CapsuleRows {
       ),
     ));
 
-    list.add(Text(capsule.flavourProfile.roastingNotes));
+    list.add(SelectableText(capsule.flavourProfile.roastingNotes));
 
     return list;
   }
@@ -237,7 +237,7 @@ class CapsuleRows {
         fontWeight: FontWeight.bold,
       ),
     ));
-    list.add(Text(capsule.flavourProfile.aromaticProfileNotes));
+    list.add(SelectableText(capsule.flavourProfile.aromaticProfileNotes));
 
     return list;
   }
@@ -268,7 +268,7 @@ class CapsuleRows {
   static List<Widget> story(CapsuleData capsule) {
     var list = List<Widget>();
     if (capsule.story == '') return list;
-    list.add(Text(capsule.story));
+    list.add(SelectableText(capsule.story));
     return list;
   }
 
@@ -283,7 +283,7 @@ class CapsuleRows {
       ),
     ));
 
-    list.add(Text(capsule.orgin));
+    list.add(SelectableText(capsule.orgin));
     return list;
   }
 
@@ -292,7 +292,7 @@ class CapsuleRows {
       children: addFieldName(
           Capsules.get().map((capsule) {
             return GridCell(
-              child: Center(child: Text(capsule.name)),
+              child: Center(child: SelectableText(capsule.name)),
               height: 80,
             );
           }).toList(),
