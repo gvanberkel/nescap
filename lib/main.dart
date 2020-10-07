@@ -1,48 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/theme/nescap_theme.dart';
-
-import 'capsule_columns.dart';
-import 'capsule_rows.dart';
+import 'package:provider/provider.dart';
+import 'state/nescap_logic.dart';
+import 'widgets/capsule_grid/capsule_grid.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(NesCapApp());
 }
 
-class MyApp extends StatelessWidget {
+class NesCapApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     var nesCapTheme = NesCapTheme(isDark: true);
 
-    return MaterialApp(
-      title: 'NesCap Capsule Explorer',
-      debugShowCheckedModeBanner: false,
-      theme: nesCapTheme.themeData,
-      home: CapsuleGrid(),
-    );
-  }
-}
-
-class CapsuleGrid extends StatelessWidget {
-  CapsuleGrid({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    var rows = CapsuleRows.get();
-    rows.insert(0, CapsuleColumns.get());
-
-    return Scaffold(
-      body: SafeArea(
-        child: InteractiveViewer(
-          constrained: false,
-          panEnabled: true,
-          scaleEnabled: true,
-          minScale: 0.8,
-          maxScale: 2.0,
-          child: Column(
-            children: rows,
-          ),
-        ),
+    return ChangeNotifierProvider(
+      create: (_) => NesCapLogic(),
+      child: MaterialApp(
+        title: 'NesCap Capsule Explorer',
+        debugShowCheckedModeBanner: false,
+        theme: nesCapTheme.themeData,
+        home: CapsuleGrid(),
       ),
     );
   }

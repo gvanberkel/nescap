@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/data/capsule_data_schema.dart';
-import 'data/capsule_data.dart';
-import 'widgets/gridCell.dart';
-import 'widgets/valueBar.dart';
+import '../../state/nescap_logic.dart';
+import '../grid_cell.dart';
+import '../value_bar.dart';
 
 class CapsuleRows {
-  static List<Row> get() {
+  static List<Row> get(NesCapLogic logic) {
     return [
-      name(),
-      decaf(),
-      cupSize(),
-      grams(),
-      price(),
-      intensity(),
-      acidity(),
-      bitterness(),
-      body(),
-      roasting(),
-      descriptions(),
+      name(logic),
+      decaf(logic),
+      cupSize(logic),
+      grams(logic),
+      price(logic),
+      intensity(logic),
+      acidity(logic),
+      bitterness(logic),
+      body(logic),
+      roasting(logic),
+      descriptions(logic),
     ];
   }
 
-  static Row cupSize() {
+  static Row cupSize(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
-              height: 72,
+              height: 74,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -87,14 +87,14 @@ class CapsuleRows {
             );
           }).toList(),
           'Cup size',
-          height: 72.0),
+          height: 74.0),
     );
   }
 
-  static Row decaf() {
+  static Row decaf(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: Center(
                   child: Icon(Icons.circle,
@@ -107,10 +107,10 @@ class CapsuleRows {
     );
   }
 
-  static Row grams() {
+  static Row grams(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: Center(
                   child: SelectableText(capsule.gramsPer10Pack == 0
@@ -122,10 +122,10 @@ class CapsuleRows {
     );
   }
 
-  static Row intensity() {
+  static Row intensity(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: ValueBar(
                 maxValue: 13,
@@ -137,10 +137,10 @@ class CapsuleRows {
     );
   }
 
-  static Row body() {
+  static Row body(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: ValueBar(
                 maxValue: 5,
@@ -152,10 +152,10 @@ class CapsuleRows {
     );
   }
 
-  static Row roasting() {
+  static Row roasting(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: ValueBar(
                 maxValue: 5,
@@ -183,10 +183,10 @@ class CapsuleRows {
     return list;
   }
 
-  static Row acidity() {
+  static Row acidity(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: ValueBar(
                 maxValue: 5,
@@ -198,10 +198,10 @@ class CapsuleRows {
     );
   }
 
-  static Row bitterness() {
+  static Row bitterness(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: ValueBar(
                 maxValue: 5,
@@ -213,10 +213,10 @@ class CapsuleRows {
     );
   }
 
-  static Row price() {
+  static Row price(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-        Capsules.get().map((capsule) {
+        logic.filteredCapsuleData.map((capsule) {
           return GridCell(
             child: Center(child: Text(capsule.price.toString())),
           );
@@ -242,10 +242,10 @@ class CapsuleRows {
     return list;
   }
 
-  static Row descriptions() {
+  static Row descriptions(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             var list = List<Widget>();
 
             list.addAll(story(capsule));
@@ -287,10 +287,10 @@ class CapsuleRows {
     return list;
   }
 
-  static Row name() {
+  static Row name(NesCapLogic logic) {
     return Row(
       children: addFieldName(
-          Capsules.get().map((capsule) {
+          logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: Center(child: SelectableText(capsule.name)),
               height: 80,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'data/capsule_data.dart';
-import 'widgets/gridCell.dart';
+import 'package:nescap/state/nescap_logic.dart';
+import '../grid_cell.dart';
 
 class CapsuleColumns {
-  static Row get() {
-    var dataColumns = Capsules.get()
+  static Row get(NesCapLogic logic) {
+    var dataColumns = logic.filteredCapsuleData
         .map(
           (capsule) => GridCell(
             height: 80,
@@ -27,9 +27,12 @@ class CapsuleColumns {
           width: 170,
           title: true,
           child: FlatButton.icon(
-              onPressed: () {},
-              icon: Icon(Icons.explore_outlined),
-              label: Text('Explore')),
+            onPressed: () {
+              logic.filterData();
+            },
+            icon: Icon(Icons.explore_outlined),
+            label: Text('Explore'),
+          ),
         ));
 
     return Row(

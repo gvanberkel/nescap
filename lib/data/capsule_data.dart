@@ -1,8 +1,10 @@
 import 'capsule_data_schema.dart';
 
 class Capsules {
-  static List<CapsuleData> get() {
-    return [
+  static List<CapsuleData> data;
+
+  static void initialise() {
+    data = [
       CapsuleData(
         name: 'Ispirazione Firenze Arpeggio',
         story:

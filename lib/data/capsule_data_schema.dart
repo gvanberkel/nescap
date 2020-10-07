@@ -28,7 +28,17 @@ class CupSize {
   final bool lungo;
   final bool milk;
 
-  CupSize({this.ristretto = false, this.espresso = false, this.lungo = false, this.milk = false});
+  CupSize(
+      {this.ristretto = false,
+      this.espresso = false,
+      this.lungo = false,
+      this.milk = false});
+
+  CupSize.unFiltered()
+      : ristretto = false,
+        espresso = false,
+        lungo = false,
+        milk = false;
 }
 
 enum AromaticNotes {
