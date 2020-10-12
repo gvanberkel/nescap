@@ -112,7 +112,7 @@ class Capsules {
         story: '',
         mainImageFileName: 'chiaro.png',
         caffeine: true,
-        gramsPer10Pack: 50,
+        gramsPer10Pack: 48,
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
@@ -481,6 +481,37 @@ class Capsules {
             ]),
       ),
       CapsuleData(
+        name: 'Ispirazione Roma',
+        story: '''
+        Ispirazione Roma is inspired by the different layers of civilization towering up to the present day, where the Modern adds its layer of elegance to the history of the city. The coffee has a popular taste forged by time and the rich southern Italian influences, enlivened by a dash of modern elegance found in its delicate acidity. Roman roasters shrewdly developed their roasting techniques to achieve an aromatic profile that wisely combined the popular ancient taste with a twist of modernity. To mirror their skill, we gave Ispirazione Roma the shortest and lightest roast of our range. It results in a subtle balance between the intensity and depth of the woodsy, cereal notes, and the finesse of the acidity and elegant aromatics - true to Rome’s rich history of contrasts.. A shot of this Intenso coffee and you’re headed straight into a virtual Roman holiday.
+          ''',
+        mainImageFileName: 'roma.png',
+        caffeine: true,
+        gramsPer10Pack: 50,
+        orgin: '''
+        To hit the complexity of a classic Roman espresso requires starting with the right blend. The magnetic complexity of a Roman roast comes from its signature 70/30 blend of Arabica and Robusta. Inspired by this style, we crafted Ispirazione Roma to be our coffee with the most finesse. We chose a natural Arabica and Robusta from Brazil to give Ispirazione Roma its deep base. Adding a high-grown washed Arabica coffee from Ixhuatlan in Mexico provides a flourish of acidity and delicate green fruit aromatics. This Mexican Arabica grows in rich and fertile volcanic soils, and it’s processed so carefully - the farmers dry the coffee on what they call ‘raised drying beds’ to protect it from the rains. You can taste the results in the cup. The excellence of these coffees – and the complexity of the blend – are an homage to the beautiful story of ancient tradition and modern elegance that you find in Rome.
+        ''',
+        cupSize: CupSize(
+          ristretto: true,
+          espresso: true,
+        ),
+        flavourProfile: FlavourProfile(
+          acidity: 4,
+          bitterness: 4,
+          body: 3,
+          intensity: 8,
+          roasting: 3,
+          roastingNotes: '''
+          When in Rome, your sugar-laced bold and dark espresso with its foamy head of hazelnut-hued crema will taste as strong as the Roman Empire in its heyday. The Romans like their espresso served scalding hot and drunk in 30 seconds, and deeply dark. But we wanted to pay tribute to the chicness of modern Rome, and so we gave Ispirazione Roma a subtle light roast. It balances the intensity and deep flavor of the coffee with that hint of acidity that gives Ispirazione Roma its elegance. A fine grind preserves the coffees’ aromatic finesse. It helps keep Ispirazione Roma strong yet mild – true to Rome’s rich history of contrasts.
+          ''',
+          aromaticProfileNotes: '''
+          From the days of Ancient Rome, a great many cultures passed through this metropolis. Different layers of civilization towering up to the present day when Modern Rome adds its layer of elegance to the rich history of the city. Ispirazione Roma, too, is beautifully complex. There’s a subtle balance between the strength of the roastiness, the depth of the woodsy, cereal notes, and the finesse of the acidity and elegant aromatics. Ispirazione Roma is the ideal coffee if you’re after a bold yet graceful espresso – it’s a classic taste crowned with elegance.
+          ''',
+          aromaticNotes: [AromaticNotes.Intense],
+          aromaticProfile: [AromaticProfile.Bold, AromaticProfile.Woody],
+        ),
+      ),
+      CapsuleData(
         name: 'Ispirazione Ristretto Italiano',
         story: '''
           Inspired by the ambassador of all Italian coffees, we chose not to imitate but to roast our own version. The ristretto is the essence of Italy’s iconic coffee culture. It’s not reflective of any one city – it’s Italy. It’s the fashion, the art, the cuisine – it’s the consistent elegance and excellence of Italy as a whole. Inspired by this ambassador of all Italian coffees, we chose not to imitate but to roast our own version. Ispirazione Ristretto Italiano is a blend of diverse Arabica and Robustas – a contrasting bouquet from around the world – together they recreate the iconic Italian taste. Ispirazione Ristretto Italiano is a medium-dark roast. In one short, sharp sip, this blend reveals all its intensity and complexity of aromas. It’s a roasty and intense coffee accented by fruity notes and a hint of acidity dancing through. It’s a profile worthy of an ambassador – a coffee that explains Italians’ passion for coffee and makes sense of why it’s ingrained in daily life.
@@ -556,7 +587,7 @@ class Capsules {
         ''',
         mainImageFileName: 'sumatra.png',
         caffeine: true,
-        gramsPer10Pack: 0,
+        gramsPer10Pack: 55,
         cupSize: CupSize(
           espresso: true,
           lungo: true,
@@ -647,7 +678,7 @@ class Capsules {
             'Ispirazione Venezia gets its inspiration from the master blending of Venetian roasters once at the crossroads of two civilizations. Ispirazione Venezia celebrates the longest local coffee tradition of Italy with a roast that combines the intense notes of the Ottoman influence and the highly aromatic European coffee profiles. These influences arrived with the Venetian traders who led the way in importing coffee to Italy. The city was a bridge for the Ottoman culture, and soon the port bustled with master blenders and roasters. Over the centuries, Venetians roasters honed their craft, passing down the savoir-faire through the generations. To reflect this inherited know-how of Venetians roasters to combine intense and aromatic coffees in symphonic harmony, we gave Ispirazione Venezia the longest roast of the range. It harmonizes all the diverse elements of its Latin American Arabicas – a hint of fruity and floral aromas, the distinct cereal fragrance, and those luxurious notes of sweet caramel. When you add milk to this full-bodied espresso, it adds to the rounded smoothness and subtle sweetness of Ispirazione Venezia.',
         mainImageFileName: 'venezia.png',
         caffeine: true,
-        gramsPer10Pack: 0,
+        gramsPer10Pack: 56,
         cupSize: CupSize(
           ristretto: true,
           espresso: true,
@@ -679,7 +710,7 @@ class Capsules {
         story: '',
         mainImageFileName: 'vivalto.png',
         caffeine: true,
-        price: 90,
+        price: 95,
         gramsPer10Pack: 0,
         cupSize: CupSize(
           lungo: true,

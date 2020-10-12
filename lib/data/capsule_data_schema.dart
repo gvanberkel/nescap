@@ -50,6 +50,7 @@ enum AromaticNotes {
   Floral,
 }
 enum AromaticProfile {
+  Bold,
   Intense,
   Creamy,
   Rich,
