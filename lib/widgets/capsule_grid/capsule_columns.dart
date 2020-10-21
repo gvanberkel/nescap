@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/state/nescap_logic.dart';
-import '../grid_cell.dart';
+import 'grid_cell.dart';
 
 class CapsuleColumns {
   static Row get(NesCapLogic logic) {
@@ -28,7 +28,7 @@ class CapsuleColumns {
           title: true,
           child: FlatButton.icon(
             onPressed: () {
-              logic.filterData();
+              logic.showFilters();
             },
             icon: Icon(Icons.explore_outlined),
             label: Text('Explore'),

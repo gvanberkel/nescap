@@ -135,7 +135,7 @@ class Capsules {
           A distinct cocoa note with a touch of almond sweetness and a hint of vanilla – that’s how you’ll recognize a BARISTA CREATIONS Cocoa Truffle cappuccino.''',
         mainImageFileName: 'cocoa.png',
         caffeine: true,
-        gramsPer10Pack: 0,
+        gramsPer10Pack: 50,
         orgin:
             'The base espresso for the BARISTA CREATIONS flavoured coffees is known for being incredibly round and smooth. In this Arabica coffee blend, you’re in the good company of the finest South American coffees – really rounded and smooth Brazilian Bourbon Arabica beans in harmony with washed Colombian Arabica. The cocoa flavour rounds out this blend even more – you get that familiar rich, velvety taste warming those roasted coffee aromas.',
         cupSize: CupSize(
@@ -165,7 +165,7 @@ class Capsules {
         story: '',
         mainImageFileName: 'colombia.png',
         caffeine: true,
-        gramsPer10Pack: 0,
+        gramsPer10Pack: 57,
         cupSize: CupSize(
           espresso: true,
           lungo: true,
@@ -296,7 +296,7 @@ class Capsules {
         price: 90,
         mainImageFileName: 'fortissio.png',
         caffeine: true,
-        gramsPer10Pack: 5.5,
+        gramsPer10Pack: 60,
         cupSize: CupSize(
           ristretto: false,
           espresso: false,

@@ -2,7 +2,7 @@ import 'package:nescap/data/capsule_data.dart';
 import 'package:nescap/data/capsule_data_schema.dart';
 import 'package:nescap/filter/filter_options.dart';
 
-class CapsuleFilter {
+class FilterEngine {
   static List<CapsuleData> filter(FilterOptions filterOptions) {
     List<CapsuleData> results = [];
 

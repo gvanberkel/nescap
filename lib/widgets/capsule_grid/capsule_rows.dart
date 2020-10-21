@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/data/capsule_data_schema.dart';
 import '../../state/nescap_logic.dart';
-import '../grid_cell.dart';
+import 'grid_cell.dart';
 import '../value_bar.dart';
 
 class CapsuleRows {
