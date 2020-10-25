@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/state/nescap_logic.dart';
 import 'package:provider/provider.dart';
-import '../filters_widget.dart';
+import '../filters_dialog.dart';
 import 'capsule_columns.dart';
 import 'capsule_rows.dart';
 
@@ -31,7 +31,7 @@ class CapsuleGrid extends StatelessWidget {
                   ),
                   if (logic.filtersVisible)
                     Positioned(
-                      child: FiltersWidget(
+                      child: FiltersDialog(
                         logic: logic,
                       ),
                       top: 20,

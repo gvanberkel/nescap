@@ -97,10 +97,13 @@ class CapsuleRows {
           logic.filteredCapsuleData.map((capsule) {
             return GridCell(
               child: Center(
-                  child: Icon(Icons.circle,
-                      color: (capsule.caffeine
-                          ? Colors.grey.shade900
-                          : Colors.red.shade900))),
+                child: Icon(
+                  Icons.circle,
+                  color: (capsule.caffeine
+                      ? Colors.grey.shade900
+                      : Colors.red.shade900),
+                ),
+              ),
             );
           }).toList(),
           'Decaf'),

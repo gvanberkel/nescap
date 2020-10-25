@@ -706,6 +706,35 @@ class Capsules {
         ),
       ),
       CapsuleData(
+        name: 'Vivalto Lungo Decaffeinato',
+        story: '',
+        mainImageFileName: 'vivalto-decaf.png',
+        caffeine: false,
+        price: 100,
+        gramsPer10Pack: 0,
+        cupSize: CupSize(
+          lungo: true,
+          milk: true,
+        ),
+        flavourProfile: FlavourProfile(
+            intensity: 4,
+            roastingNotes:
+                '''We roast the coffees separately - it keeps that complexity and balance at the forefront of Nespresso Vivalto Lungo Decaffeinato.
+A shorter, lighter roast on the Ethiopian and Colombian coffee beans preserves their finer aromatics. A darker and longer roast of the remaining coffee develops the pleasant bitterness and brings the rich roastiness.
+          ''',
+            aromaticProfileNotes: '''
+            Roasted and floral notes dance through Vivalto Lungo Decaffeinato just as in the original Vivalto Lungo.
+Sweet cereal and light woody notes bring complexity to this irresistible decaf coffee.
+          ''',
+            aromaticNotes: [
+              AromaticNotes.Fruity
+            ],
+            aromaticProfile: [
+              AromaticProfile.Complex,
+              AromaticProfile.Balanced
+            ]),
+      ),
+      CapsuleData(
         name: 'Vivalto Lungo',
         story: '',
         mainImageFileName: 'vivalto.png',
@@ -735,7 +764,7 @@ class Capsules {
       CapsuleData(
         name: 'Volluto Decaffeinato',
         story: '',
-        mainImageFileName: 'vivalto-decaf.png',
+        mainImageFileName: 'volluto-decaf.png',
         caffeine: false,
         price: 90,
         gramsPer10Pack: 0,
@@ -754,6 +783,30 @@ class Capsules {
           aromaticNotes: [AromaticNotes.Balanced],
           aromaticProfile: [AromaticProfile.Sweet, AromaticProfile.Light],
         ),
+      ),
+      CapsuleData(
+        name: 'Scuro',
+        story: '',
+        mainImageFileName: 'scuro.png',
+        caffeine: true,
+        price: 100,
+        gramsPer10Pack: 55,
+        cupSize: CupSize(
+          milk: true,
+          ristretto: true,
+          espresso: true,
+        ),
+        flavourProfile: FlavourProfile(
+            roastingNotes:
+                '''The art of roasting calls for a fine balance of temperature, roast time and bean color. Getting it just right is key to striking that great harmony of coffee with milk. We tested lots of combinations until we discovered that to get that ideal flavor balance in Scuro with milk, we needed an extremely contrasted split roasting technique. One part of the blend gets a long and dark roast, and the other is roasted much faster and lighter. When you combine the two, the blend develops that special roasty character that goes so well with the sweetness of milk.''',
+            aromaticProfileNotes: '''We took our inspiration from the baristas in Melbourne – they are the masters of robust, but exquisitely balanced tastes – their roasting and blending lend an aromatic power poised as the yin to the yang of milk. Our BARISTA CREATIONS Scuro shows you how intense your coffee can get while still staying beautifully in balance with milk. It’s just roasty enough to push through milk, and its delicate sweetness tempers its intensity to make it a compelling intense Cappuccino or Latte Macchiato. Taste it with cow milk or your favorite plant-based milk alternative: oat milk, coconut milk or soya milk.''',
+            aromaticNotes: [
+              AromaticNotes.Balanced
+            ],
+            aromaticProfile: [
+              AromaticProfile.Roasted,
+              AromaticProfile.Balanced
+            ]),
       ),
       CapsuleData(
         name: 'Volluto',

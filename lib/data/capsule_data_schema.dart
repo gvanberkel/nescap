@@ -23,10 +23,10 @@ class CapsuleData {
 }
 
 class CupSize {
-  final bool ristretto;
-  final bool espresso;
-  final bool lungo;
-  final bool milk;
+  bool ristretto;
+  bool espresso;
+  bool lungo;
+  bool milk;
 
   CupSize(
       {this.ristretto = false,
@@ -39,6 +39,15 @@ class CupSize {
         espresso = false,
         lungo = false,
         milk = false;
+
+  bool get allSet => this.ristretto && this.espresso && this.lungo && this.milk;
+
+  void setAll() {
+    ristretto = true;
+    espresso = true;
+    lungo = true;
+    milk = true;
+  }
 }
 
 enum AromaticNotes {
@@ -51,6 +60,7 @@ enum AromaticNotes {
 }
 enum AromaticProfile {
   Bold,
+  Roasted,
   Intense,
   Creamy,
   Rich,
