@@ -144,6 +144,7 @@ class Capsules {
           milk: true,
         ),
         flavourProfile: FlavourProfile(
+          intensity: 4,
           acidity: 1,
           bitterness: 1,
           body: 2,
@@ -197,6 +198,9 @@ class Capsules {
           milk: true,
         ),
         flavourProfile: FlavourProfile(
+          intensity: 11,
+          bitterness: 5,
+          roasting: 5,
           aromaticNotes: [AromaticNotes.Spicy],
           aromaticProfile: [AromaticProfile.Intense],
           roastingNotes: '''
@@ -797,6 +801,7 @@ Sweet cereal and light woody notes bring complexity to this irresistible decaf c
           espresso: true,
         ),
         flavourProfile: FlavourProfile(
+            intensity: 8,
             roastingNotes:
                 '''The art of roasting calls for a fine balance of temperature, roast time and bean color. Getting it just right is key to striking that great harmony of coffee with milk. We tested lots of combinations until we discovered that to get that ideal flavor balance in Scuro with milk, we needed an extremely contrasted split roasting technique. One part of the blend gets a long and dark roast, and the other is roasted much faster and lighter. When you combine the two, the blend develops that special roasty character that goes so well with the sweetness of milk.''',
             aromaticProfileNotes: '''We took our inspiration from the baristas in Melbourne – they are the masters of robust, but exquisitely balanced tastes – their roasting and blending lend an aromatic power poised as the yin to the yang of milk. Our BARISTA CREATIONS Scuro shows you how intense your coffee can get while still staying beautifully in balance with milk. It’s just roasty enough to push through milk, and its delicate sweetness tempers its intensity to make it a compelling intense Cappuccino or Latte Macchiato. Taste it with cow milk or your favorite plant-based milk alternative: oat milk, coconut milk or soya milk.''',

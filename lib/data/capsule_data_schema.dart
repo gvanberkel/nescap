@@ -10,9 +10,9 @@ class CapsuleData {
   final double price;
 
   CapsuleData({
-    this.name,
+    this.name = '',
     this.mainImageFileName,
-    this.story,
+    this.story = '',
     this.caffeine,
     this.gramsPer10Pack,
     this.cupSize,
