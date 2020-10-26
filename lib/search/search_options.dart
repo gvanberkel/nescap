@@ -1,6 +1,6 @@
 import '../data/capsule_data_schema.dart';
 
-class FilterOptions {
+class SearchOptions {
   CupSize cupSizes = CupSize(
     ristretto: false,
     espresso: false,
@@ -16,9 +16,12 @@ class FilterOptions {
     light: false,
     itense: false,
   );
+  ResultsLayout resultsLayout = ResultsLayout.DataSheet;
 
-  FilterOptions();
+  SearchOptions();
 }
+
+enum ResultsLayout { DataSheet, DrillDown }
 
 class CaffeineContent {
   bool caffeine;

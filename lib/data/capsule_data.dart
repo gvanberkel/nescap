@@ -144,7 +144,7 @@ class Capsules {
           milk: true,
         ),
         flavourProfile: FlavourProfile(
-          intensity: 4,
+          intensity: 5,
           acidity: 1,
           bitterness: 1,
           body: 2,
