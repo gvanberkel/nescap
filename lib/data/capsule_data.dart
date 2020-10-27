@@ -92,6 +92,7 @@ class Capsules {
           milk: true,
         ),
         flavourProfile: FlavourProfile(
+            intensity: 6,
             acidity: 1,
             bitterness: 1,
             body: 2,
@@ -128,11 +129,7 @@ class Capsules {
       CapsuleData(
         name: 'Cocoa Truffle',
         story:
-            '''Dark and bitter cocoa flavour meets the malted cereal note of the base espresso in BARISTA CREATIONS Cocoa Truffle. 
-          It’s rich and reminiscent of dark chocolate truffles. The base espresso is a blend of 
-          the finest South American Arabicas – sweet Bourbon beans from Brazil in harmony with the washed Colombian beans. 
-          A split roast brings out the best in each to create an incredibly smooth and rounded espresso – a great match for that dark cocoa flavour. 
-          A distinct cocoa note with a touch of almond sweetness and a hint of vanilla – that’s how you’ll recognize a BARISTA CREATIONS Cocoa Truffle cappuccino.''',
+            '''Dark and bitter cocoa flavour meets the malted cereal note of the base espresso in BARISTA CREATIONS Cocoa Truffle. It’s rich and reminiscent of dark chocolate truffles. The base espresso is a blend of the finest South American Arabicas – sweet Bourbon beans from Brazil in harmony with the washed Colombian beans. A split roast brings out the best in each to create an incredibly smooth and rounded espresso – a great match for that dark cocoa flavour. A distinct cocoa note with a touch of almond sweetness and a hint of vanilla – that’s how you’ll recognize a BARISTA CREATIONS Cocoa Truffle cappuccino.''',
         mainImageFileName: 'cocoa.png',
         caffeine: true,
         gramsPer10Pack: 50,
@@ -144,7 +141,7 @@ class Capsules {
           milk: true,
         ),
         flavourProfile: FlavourProfile(
-          intensity: 5,
+          intensity: 6,
           acidity: 1,
           bitterness: 1,
           body: 2,
@@ -155,10 +152,7 @@ class Capsules {
             AromaticProfile.Flavoured
           ],
           roastingNotes:
-              '''Split roast, the Brazilian coffee is lightly roasted to keep it smooth and 
-            with all its malted cereal notes intact, while the majority of the Colombian coffee beans get a 
-            short roast to release all their finer aromatics. A fine grind adds a glimmer of 
-            intensity to this harmonious coffee.''',
+              '''Split roast, the Brazilian coffee is lightly roasted to keep it smooth and with all its malted cereal notes intact, while the majority of the Colombian coffee beans get a short roast to release all their finer aromatics. A fine grind adds a glimmer of intensity to this harmonious coffee.''',
         ),
       ),
       CapsuleData(
@@ -179,16 +173,16 @@ class Capsules {
               ''',
           aromaticProfile: [AromaticProfile.Fruity, AromaticProfile.Vibrant],
           aromaticProfileNotes: '''
-              Master Origin Colombia with Late Harvest Arabica is both a smooth coffee and a fruity coffee. You’ll taste all the winey red fruit
-              notes of blackcurrant and cranberry that surface when you wait. A bright acidity makes this a vivacious coffee. And it’s in smooth
-              balance with those seductive aromatics.
+              Master Origin Colombia with Late Harvest Arabica is both a smooth coffee and a fruity coffee. You’ll taste all the winey red fruit notes of blackcurrant and cranberry that surface when you wait. A bright acidity makes this a vivacious coffee. And it’s in smooth balance with those seductive aromatics.
               ''',
           aromaticNotes: [AromaticNotes.Balanced],
         ),
       ),
       CapsuleData(
         name: 'Corto',
-        story: 'Capsule story goes here...',
+        story: '''
+
+        ''',
         mainImageFileName: 'corto.png',
         caffeine: true,
         gramsPer10Pack: 58,
@@ -203,26 +197,17 @@ class Capsules {
           roasting: 5,
           aromaticNotes: [AromaticNotes.Spicy],
           aromaticProfile: [AromaticProfile.Intense],
-          roastingNotes: '''
-            When you roast any coffee, you have to work at that fine balance of temperature, roast time and bean color. 
-            But it’s even more important when you want that coffee to be in ideal harmony with milk. 
-            For Corto that means split roasting the coffees for a long time in order to unleash the textures 
-            we’re looking for in a Spanish-style coffee. The long roast time – where we wait for the bean to reach a dark, 
-            rich roast colour – develops an alluring bitterness and that syrupy, thick body.
+          roastingNotes:
+              '''When you roast any coffee, you have to work at that fine balance of temperature, roast time and bean color. But it’s even more important when you want that coffee to be in ideal harmony with milk. For Corto that means split roasting the coffees for a long time in order to unleash the textures we’re looking for in a Spanish-style coffee. The long roast time – where we wait for the bean to reach a dark, rich roast colour – develops an alluring bitterness and that syrupy, thick body.
             ''',
           aromaticProfileNotes: '''
-            For BARISTA CREATIONS Corto taste we took our inspiration from the dark roasts and thick textures created 
-            by the expert baristas in Spain, that is why it is easily recognizable by its raw strength and intense, roasty character. 
-            Corto can punch through milk with its rich aftertaste, elegant bitterness, and a thick, textured body. 
-            With a dash of hot milk and milk froth crowning the cup, you’ll experience Corto in the traditional cortado recipe’s way. 
-            When you add milk, its sweetness softens the bitter note the way the moon lightens a dark night. 
-            Taste it with cow milk or with your favorite plant-based milk alternative: oat milk will be a perfect pair.
+            For BARISTA CREATIONS Corto taste we took our inspiration from the dark roasts and thick textures created by the expert baristas in Spain, that is why it is easily recognizable by its raw strength and intense, roasty character. Corto can punch through milk with its rich aftertaste, elegant bitterness, and a thick, textured body. With a dash of hot milk and milk froth crowning the cup, you’ll experience Corto in the traditional cortado recipe’s way. When you add milk, its sweetness softens the bitter note the way the moon lightens a dark night. Taste it with cow milk or with your favorite plant-based milk alternative: oat milk will be a perfect pair.
             ''',
         ),
       ),
       CapsuleData(
         name: 'Cosi',
-        story: 'Capsule story goes here...',
+        story: '',
         mainImageFileName: 'cosi.png',
         caffeine: true,
         gramsPer10Pack: 0,
@@ -662,6 +647,7 @@ class Capsules {
           milk: true,
         ),
         flavourProfile: FlavourProfile(
+          intensity: 6,
           acidity: 1,
           bitterness: 1,
           body: 2,
@@ -723,12 +709,10 @@ class Capsules {
         flavourProfile: FlavourProfile(
             intensity: 4,
             roastingNotes:
-                '''We roast the coffees separately - it keeps that complexity and balance at the forefront of Nespresso Vivalto Lungo Decaffeinato.
-A shorter, lighter roast on the Ethiopian and Colombian coffee beans preserves their finer aromatics. A darker and longer roast of the remaining coffee develops the pleasant bitterness and brings the rich roastiness.
+                '''We roast the coffees separately - it keeps that complexity and balance at the forefront of Nespresso Vivalto Lungo Decaffeinato. A shorter, lighter roast on the Ethiopian and Colombian coffee beans preserves their finer aromatics. A darker and longer roast of the remaining coffee develops the pleasant bitterness and brings the rich roastiness.
           ''',
             aromaticProfileNotes: '''
-            Roasted and floral notes dance through Vivalto Lungo Decaffeinato just as in the original Vivalto Lungo.
-Sweet cereal and light woody notes bring complexity to this irresistible decaf coffee.
+            Roasted and floral notes dance through Vivalto Lungo Decaffeinato just as in the original Vivalto Lungo. Sweet cereal and light woody notes bring complexity to this irresistible decaf coffee.
           ''',
             aromaticNotes: [
               AromaticNotes.Fruity

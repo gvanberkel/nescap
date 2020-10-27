@@ -13,7 +13,7 @@ class NesCapTheme {
     return ThemeData(
       primarySwatch: Colors.orange,
       brightness: this.brightness,
-      //textTheme: Theme.of(context).dark apply(),
+      platform: TargetPlatform.android,
       primaryColor: Colors.yellow.shade800,
     );
   }

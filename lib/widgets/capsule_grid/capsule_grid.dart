@@ -22,9 +22,7 @@ class CapsuleGrid extends StatelessWidget {
                   InteractiveViewer(
                     constrained: false,
                     panEnabled: true,
-                    scaleEnabled: true,
-                    minScale: 0.8,
-                    maxScale: 1.4,
+                    scaleEnabled: false,
                     child: Column(
                       children: rows,
                     ),

@@ -26,7 +26,7 @@ class CapsuleRows {
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return GridCell(
-              height: 74,
+              height: 75,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -87,7 +87,7 @@ class CapsuleRows {
             );
           }).toList(),
           'Cup size',
-          height: 74.0),
+          height: 75.0),
     );
   }
 

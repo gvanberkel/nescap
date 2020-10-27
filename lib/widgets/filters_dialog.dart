@@ -10,7 +10,7 @@ class FiltersDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(8.0),
-      width: 520,
+      width: 535,
       height: 400,
       decoration: BoxDecoration(
         color: Theme.of(context).dialogBackgroundColor,
@@ -57,44 +57,50 @@ class FiltersDialog extends StatelessWidget {
   }
 
   Widget searchButton() {
+    var capsulesString =
+        logic.projectedResultsCount == 1 ? 'capsule' : 'capules';
+
     return OutlineButton(
       onPressed: () {
         logic.filterData();
       },
-      child: Text('Search'),
+      child: Text(
+          'Show ${logic.projectedResultsCount} $capsulesString'.toUpperCase()),
     );
   }
 
   Wrap strength() {
     return Wrap(
+      spacing: 8.0,
+      runSpacing: 4.0,
       alignment: WrapAlignment.start,
       children: [
         ChoiceChip(
-          label: Text('Light (1 to 7)'),
-          selected: logic.filterOptions.strengths.light,
-          onSelected: (value) {
-            logic.setFilterLightStrength(value);
-          },
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        ChoiceChip(
-          label: Text('Intense (8 to 13)'),
-          selected: logic.filterOptions.strengths.itense,
-          onSelected: (value) {
-            logic.setFilterIntenseStrength(value);
-          },
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        ChoiceChip(
           label: Text('All intensities'),
-          selected: logic.filterOptions.strengths.allSet,
+          selected: !logic.filterOptions.filterStrengths,
           onSelected: (value) {
-            logic.setFilterAllStrengths(value);
+            logic.setFilterStrengths(!value);
           },
+        ),
+        Visibility(
+          visible: logic.filterOptions.filterStrengths,
+          child: ChoiceChip(
+            label: Text('Light (1 to 7)'),
+            selected: logic.filterOptions.strengths.light,
+            onSelected: (value) {
+              logic.setFilterLightStrength(value);
+            },
+          ),
+        ),
+        Visibility(
+          visible: logic.filterOptions.filterStrengths,
+          child: ChoiceChip(
+            label: Text('Intense (8 to 13)'),
+            selected: logic.filterOptions.strengths.itense,
+            onSelected: (value) {
+              logic.setFilterIntenseStrength(value);
+            },
+          ),
         ),
       ],
     );
@@ -102,101 +108,105 @@ class FiltersDialog extends StatelessWidget {
 
   Wrap cupSize() {
     return Wrap(
+      spacing: 8.0,
+      runSpacing: 4.0,
       alignment: WrapAlignment.start,
       children: [
         ChoiceChip(
-          avatar: Image.asset('images/cupsize/ristretto.png', width: 25),
-          label: Text('Ristretto'),
-          selected: logic.filterOptions.cupSizes.ristretto,
+          label: Text('All cup sizes'),
+          selected: !logic.filterOptions.filterCupSizes,
           onSelected: (value) {
-            logic.setFilterRistretto(value);
+            logic.setFilterCupSizes(!value);
           },
         ),
-        SizedBox(
-          width: 8,
+        Visibility(
+          visible: logic.filterOptions.filterCupSizes,
+          child: ChoiceChip(
+            avatar: Image.asset('images/cupsize/ristretto.png', width: 25),
+            label: Text('Ristretto'),
+            selected: logic.filterOptions.cupSizes.ristretto,
+            onSelected: (value) {
+              logic.setFilterRistretto(value);
+            },
+          ),
         ),
-        ChoiceChip(
-          avatar: Image.asset('images/cupsize/espresso.png', width: 25),
-          label: Text('Espresso'),
-          selected: logic.filterOptions.cupSizes.espresso,
-          onSelected: (value) {
-            logic.setFilterEspresso(value);
-          },
+        Visibility(
+          visible: logic.filterOptions.filterCupSizes,
+          child: ChoiceChip(
+            avatar: Image.asset('images/cupsize/espresso.png', width: 25),
+            label: Text('Espresso'),
+            selected: logic.filterOptions.cupSizes.espresso,
+            onSelected: (value) {
+              logic.setFilterEspresso(value);
+            },
+          ),
         ),
-        SizedBox(
-          width: 8,
+        Visibility(
+          visible: logic.filterOptions.filterCupSizes,
+          child: ChoiceChip(
+            avatar: Image.asset('images/cupsize/lungo.png', width: 25),
+            label: Text('Lungo'),
+            selected: logic.filterOptions.cupSizes.lungo,
+            onSelected: (value) {
+              logic.setFilterLungo(value);
+            },
+          ),
         ),
-        ChoiceChip(
-          avatar: Image.asset('images/cupsize/lungo.png', width: 25),
-          label: Text('Lungo'),
-          selected: logic.filterOptions.cupSizes.lungo,
-          onSelected: (value) {
-            logic.setFilterLungo(value);
-          },
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        ChoiceChip(
-          avatar: Image.asset('images/cupsize/milk.png', width: 25),
-          label: Text('Milk'),
-          selected: logic.filterOptions.cupSizes.milk,
-          onSelected: (value) {
-            logic.setFilterMilk(value);
-          },
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        ChoiceChip(
-          label: Text('All sizes'),
-          selected: logic.filterOptions.cupSizes.allSet,
-          onSelected: (value) {
-            logic.setFilterAllCupSizes(value);
-          },
+        Visibility(
+          visible: logic.filterOptions.filterCupSizes,
+          child: ChoiceChip(
+            avatar: Image.asset('images/cupsize/milk.png', width: 25),
+            label: Text('Milk'),
+            selected: logic.filterOptions.cupSizes.milk,
+            onSelected: (value) {
+              logic.setFilterMilk(value);
+            },
+          ),
         ),
       ],
     );
   }
 
-  Wrap caffeine() {
+  Widget caffeine() {
     return Wrap(
+      spacing: 8.0,
+      runSpacing: 4.0,
       alignment: WrapAlignment.start,
       children: [
         ChoiceChip(
-          avatar: Icon(
-            Icons.circle,
-            color: (Colors.grey.shade900),
-          ),
-          label: Text('Caffeine'),
-          selected: logic.filterOptions.caffeineContent.caffeine,
-          onSelected: (value) {
-            logic.setFilterCaffeine(value);
-          },
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        ChoiceChip(
-          avatar: Icon(
-            Icons.circle,
-            color: (Colors.red.shade900),
-          ),
-          label: Text('Decaf'),
-          selected: logic.filterOptions.caffeineContent.decaf,
-          onSelected: (value) {
-            logic.setFilterDecaf(value);
-          },
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        ChoiceChip(
           label: Text('Caffeine & Decaf'),
-          selected: logic.filterOptions.caffeineContent.allSet,
+          selected: !logic.filterOptions.filterCaffeineContent,
           onSelected: (value) {
-            logic.setFilterAllCaffeineContent(value);
+            logic.setFilterCaffeineContent(!value);
           },
+        ),
+        Visibility(
+          visible: logic.filterOptions.filterCaffeineContent,
+          child: ChoiceChip(
+            avatar: Icon(
+              Icons.circle,
+              color: (Colors.grey.shade900),
+            ),
+            label: Text('Caffeine'),
+            selected: logic.filterOptions.caffeineContent.caffeine,
+            onSelected: (value) {
+              logic.setFilterCaffeine(value);
+            },
+          ),
+        ),
+        Visibility(
+          visible: logic.filterOptions.filterCaffeineContent,
+          child: ChoiceChip(
+            avatar: Icon(
+              Icons.circle,
+              color: (Colors.red.shade900),
+            ),
+            label: Text('Decaf'),
+            selected: logic.filterOptions.caffeineContent.decaf,
+            onSelected: (value) {
+              logic.setFilterDecaf(value);
+            },
+          ),
         ),
       ],
     );
@@ -204,6 +214,8 @@ class FiltersDialog extends StatelessWidget {
 
   Wrap freeText() {
     return Wrap(
+      spacing: 8.0,
+      runSpacing: 8.0,
       children: [
         TextField(
           decoration: InputDecoration(
@@ -213,6 +225,9 @@ class FiltersDialog extends StatelessWidget {
           controller: TextEditingController(text: logic.filterOptions.freeText),
           onChanged: (value) {
             logic.filterOptions.freeText = value;
+          },
+          onEditingComplete: () {
+            logic.setFilterFreeText(logic.filterOptions.freeText);
           },
         )
       ],

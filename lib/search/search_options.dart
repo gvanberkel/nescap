@@ -2,20 +2,27 @@ import '../data/capsule_data_schema.dart';
 
 class SearchOptions {
   CupSize cupSizes = CupSize(
-    ristretto: false,
-    espresso: false,
-    lungo: false,
-    milk: false,
+    ristretto: true,
+    espresso: true,
+    lungo: true,
+    milk: true,
   );
+  bool filterCupSizes = false;
+
   String freeText = '';
+
   CaffeineContent caffeineContent = CaffeineContent(
-    caffeine: false,
-    decaf: false,
+    caffeine: true,
+    decaf: true,
   );
+  bool filterCaffeineContent = false;
+
   CoffeeStrength strengths = CoffeeStrength(
-    light: false,
-    itense: false,
+    light: true,
+    itense: true,
   );
+  bool filterStrengths = false;
+
   ResultsLayout resultsLayout = ResultsLayout.DataSheet;
 
   SearchOptions();
