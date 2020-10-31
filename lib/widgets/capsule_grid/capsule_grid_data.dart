@@ -1,27 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/data/capsule_data_schema.dart';
+import 'package:provider/provider.dart';
 import '../../state/nescap_logic.dart';
+import 'capsule_grid_headers.dart';
 import 'grid_cell.dart';
 import '../value_bar.dart';
 
-class CapsuleRows {
-  static List<Row> get(NesCapLogic logic) {
+class CapsuleGridData extends StatefulWidget {
+  @override
+  _CapsuleGridDataState createState() => _CapsuleGridDataState();
+}
+
+class _CapsuleGridDataState extends State<CapsuleGridData> {
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<NesCapLogic>(
+      builder: (_, logic, __) {
+        this.logic = logic;
+        return Column(
+          children: rows(),
+        );
+      },
+    );
+  }
+
+  NesCapLogic logic;
+
+  List<Widget> rows() {
     return [
-      name(logic),
-      decaf(logic),
-      cupSize(logic),
-      grams(logic),
-      price(logic),
-      intensity(logic),
-      acidity(logic),
-      bitterness(logic),
-      body(logic),
-      roasting(logic),
-      descriptions(logic),
+      CapsuleGridHeaders(),
+      name(),
+      caffeineContent(),
+      cupSize(),
+      grams(),
+      price(),
+      intensity(),
+      acidity(),
+      bitterness(),
+      body(),
+      roasting(),
+      descriptions(),
     ];
   }
 
-  static Row cupSize(NesCapLogic logic) {
+  Row cupSize() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -91,7 +113,7 @@ class CapsuleRows {
     );
   }
 
-  static Row decaf(NesCapLogic logic) {
+  Row caffeineContent() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -106,11 +128,11 @@ class CapsuleRows {
               ),
             );
           }).toList(),
-          'Decaf'),
+          'Caffeine content'),
     );
   }
 
-  static Row grams(NesCapLogic logic) {
+  Row grams() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -125,7 +147,7 @@ class CapsuleRows {
     );
   }
 
-  static Row intensity(NesCapLogic logic) {
+  Row intensity() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -140,7 +162,7 @@ class CapsuleRows {
     );
   }
 
-  static Row body(NesCapLogic logic) {
+  Row body() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -155,7 +177,7 @@ class CapsuleRows {
     );
   }
 
-  static Row roasting(NesCapLogic logic) {
+  Row roasting() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -170,7 +192,7 @@ class CapsuleRows {
     );
   }
 
-  static List<Widget> roastingNotes(CapsuleData capsule) {
+  List<Widget> roastingNotes(CapsuleData capsule) {
     var list = List<Widget>();
     if (capsule.flavourProfile.roastingNotes == '') return list;
 
@@ -186,7 +208,7 @@ class CapsuleRows {
     return list;
   }
 
-  static Row acidity(NesCapLogic logic) {
+  Row acidity() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -201,7 +223,7 @@ class CapsuleRows {
     );
   }
 
-  static Row bitterness(NesCapLogic logic) {
+  Row bitterness() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -216,7 +238,7 @@ class CapsuleRows {
     );
   }
 
-  static Row price(NesCapLogic logic) {
+  Row price() {
     return Row(
       children: addFieldName(
         logic.filteredCapsuleData.map((capsule) {
@@ -229,23 +251,7 @@ class CapsuleRows {
     );
   }
 
-  static List<Widget> aromaticProfileNotes(CapsuleData capsule) {
-    var list = List<Widget>();
-
-    if (capsule.flavourProfile.aromaticProfileNotes == '') return list;
-
-    list.add(Text(
-      'Aromatic profile',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-      ),
-    ));
-    list.add(SelectableText(capsule.flavourProfile.aromaticProfileNotes));
-
-    return list;
-  }
-
-  static Row descriptions(NesCapLogic logic) {
+  Row descriptions() {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
@@ -268,14 +274,44 @@ class CapsuleRows {
     );
   }
 
-  static List<Widget> story(CapsuleData capsule) {
+  Row name() {
+    return Row(
+      children: addFieldName(
+          logic.filteredCapsuleData.map((capsule) {
+            return GridCell(
+              child: Center(child: SelectableText(capsule.name)),
+              height: 80,
+            );
+          }).toList(),
+          'Name',
+          height: 80),
+    );
+  }
+
+  List<Widget> aromaticProfileNotes(CapsuleData capsule) {
+    var list = List<Widget>();
+
+    if (capsule.flavourProfile.aromaticProfileNotes == '') return list;
+
+    list.add(Text(
+      'Aromatic profile',
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+    ));
+    list.add(SelectableText(capsule.flavourProfile.aromaticProfileNotes));
+
+    return list;
+  }
+
+  List<Widget> story(CapsuleData capsule) {
     var list = List<Widget>();
     if (capsule.story == '') return list;
     list.add(SelectableText(capsule.story));
     return list;
   }
 
-  static List<Widget> origin(CapsuleData capsule) {
+  List<Widget> origin(CapsuleData capsule) {
     var list = List<Widget>();
     if (capsule.orgin == '') return list;
 
@@ -290,21 +326,7 @@ class CapsuleRows {
     return list;
   }
 
-  static Row name(NesCapLogic logic) {
-    return Row(
-      children: addFieldName(
-          logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
-              child: Center(child: SelectableText(capsule.name)),
-              height: 80,
-            );
-          }).toList(),
-          'Name',
-          height: 80),
-    );
-  }
-
-  static List<GridCell> addFieldName(List<GridCell> list, String fieldName,
+  List<GridCell> addFieldName(List<GridCell> list, String fieldName,
       {double height = 60}) {
     list.insert(
         0,

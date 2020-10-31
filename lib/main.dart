@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/theme/nescap_theme.dart';
-import 'package:provider/provider.dart';
-import 'state/nescap_logic.dart';
-import 'widgets/capsule_grid/capsule_grid.dart';
+import 'widgets/main_app_state_provider.dart';
 
 void main() {
   runApp(NesCapApp());
@@ -14,15 +12,12 @@ class NesCapApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var nesCapTheme = NesCapTheme(context: context);
 
-    return ChangeNotifierProvider(
-      create: (_) => NesCapLogic(),
-      child: MaterialApp(
-        title: 'NesCap Capsule Explorer',
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.dark,
-        theme: nesCapTheme.themeData,
-        home: CapsuleGrid(),
-      ),
+    return MaterialApp(
+      title: 'NesCap Capsule Explorer',
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
+      theme: nesCapTheme.themeData,
+      home: MainAppStateProvider(),
     );
   }
 }

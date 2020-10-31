@@ -1,236 +1,362 @@
 import 'package:flutter/material.dart';
+import 'package:nescap/data/capsule_data.dart';
 import 'package:nescap/state/nescap_logic.dart';
+import 'package:provider/provider.dart';
 
-class FiltersDialog extends StatelessWidget {
+class FiltersDialog extends StatefulWidget {
+  FiltersDialog({Key key, @required this.logic}) : super(key: key);
+
   final NesCapLogic logic;
 
-  FiltersDialog({Key key, this.logic}) : super(key: key);
+  @override
+  _FiltersDialogState createState() => _FiltersDialogState();
+}
+
+class _FiltersDialogState extends State<FiltersDialog> {
+  Color selectedColour;
+  Color buttonColour;
+
+  NesCapLogic logic;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8.0),
-      width: 535,
-      height: 400,
-      decoration: BoxDecoration(
-        color: Theme.of(context).dialogBackgroundColor,
-        borderRadius: BorderRadius.all(
-          Radius.circular(8.0),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black,
-            blurRadius: 20.0,
-          )
-        ],
-      ),
+    this.selectedColour = Theme.of(context).primaryColor.withOpacity(.3);
+    this.buttonColour = Theme.of(context).buttonColor;
+
+    this.logic = widget.logic;
+
+    return ChangeNotifierProvider.value(
+        value: widget.logic,
+        builder: (_, __) {
+          return Consumer<NesCapLogic>(
+            builder: (_, logic, __) {
+              return GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Material(
+                  color: Theme.of(context).dialogBackgroundColor.withAlpha(120),
+                  child: filtersDialogResponsiveLogic(context),
+                ),
+              );
+            },
+          );
+        });
+  }
+
+  Widget filtersDialogResponsiveLogic(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, boxConstraints) {
+        if (boxConstraints.maxWidth > 600)
+          return Stack(
+            children: [
+              Positioned(
+                left: 10,
+                top: 10,
+                child: Container(
+                  width: 500,
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).dialogBackgroundColor,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8.0),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 20.0,
+                      )
+                    ],
+                  ),
+                  child: filtersDialog(context),
+                ),
+              ),
+            ],
+          );
+        else {
+          return Container(
+              color: Theme.of(context).dialogBackgroundColor,
+              child: filtersDialog(context));
+        }
+      },
+    );
+  }
+
+  Widget filtersDialog(BuildContext context) {
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(left: 8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: 16,
             ),
-            Text(
-              'Explore capsules',
-              style: Theme.of(context).textTheme.headline3,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                IconButton(
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.all(0),
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                Text(
+                  'Explore capsules',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ],
             ),
             SizedBox(
               height: 16,
             ),
-            freeText(),
+            _freeText(),
             SizedBox(
               height: 8,
             ),
-            caffeine(),
-            cupSize(),
-            strength(),
-            Spacer(
-              flex: 1,
+            _highLevelFilters(),
+            _caffeine(),
+            _cupSize(),
+            _strength(),
+            SizedBox(
+              height: 8,
             ),
-            searchButton()
+            _searchButton()
           ],
         ),
       ),
     );
   }
 
-  Widget searchButton() {
-    var capsulesString =
-        logic.projectedResultsCount == 1 ? 'capsule' : 'capules';
-
-    return OutlineButton(
-      onPressed: () {
-        logic.filterData();
-      },
-      child: Text(
-          'Show ${logic.projectedResultsCount} $capsulesString'.toUpperCase()),
-    );
-  }
-
-  Wrap strength() {
+  Wrap _highLevelFilters() {
     return Wrap(
       spacing: 8.0,
-      runSpacing: 4.0,
-      alignment: WrapAlignment.start,
+      runSpacing: 8.0,
       children: [
-        ChoiceChip(
-          label: Text('All intensities'),
-          selected: !logic.filterOptions.filterStrengths,
-          onSelected: (value) {
-            logic.setFilterStrengths(!value);
-          },
-        ),
-        Visibility(
-          visible: logic.filterOptions.filterStrengths,
-          child: ChoiceChip(
-            label: Text('Light (1 to 7)'),
-            selected: logic.filterOptions.strengths.light,
-            onSelected: (value) {
-              logic.setFilterLightStrength(value);
-            },
-          ),
-        ),
-        Visibility(
-          visible: logic.filterOptions.filterStrengths,
-          child: ChoiceChip(
-            label: Text('Intense (8 to 13)'),
-            selected: logic.filterOptions.strengths.itense,
-            onSelected: (value) {
-              logic.setFilterIntenseStrength(value);
-            },
-          ),
-        ),
-      ],
-    );
-  }
-
-  Wrap cupSize() {
-    return Wrap(
-      spacing: 8.0,
-      runSpacing: 4.0,
-      alignment: WrapAlignment.start,
-      children: [
-        ChoiceChip(
-          label: Text('All cup sizes'),
-          selected: !logic.filterOptions.filterCupSizes,
-          onSelected: (value) {
-            logic.setFilterCupSizes(!value);
-          },
-        ),
-        Visibility(
-          visible: logic.filterOptions.filterCupSizes,
-          child: ChoiceChip(
-            avatar: Image.asset('images/cupsize/ristretto.png', width: 25),
-            label: Text('Ristretto'),
-            selected: logic.filterOptions.cupSizes.ristretto,
-            onSelected: (value) {
-              logic.setFilterRistretto(value);
-            },
-          ),
-        ),
-        Visibility(
-          visible: logic.filterOptions.filterCupSizes,
-          child: ChoiceChip(
-            avatar: Image.asset('images/cupsize/espresso.png', width: 25),
-            label: Text('Espresso'),
-            selected: logic.filterOptions.cupSizes.espresso,
-            onSelected: (value) {
-              logic.setFilterEspresso(value);
-            },
-          ),
-        ),
-        Visibility(
-          visible: logic.filterOptions.filterCupSizes,
-          child: ChoiceChip(
-            avatar: Image.asset('images/cupsize/lungo.png', width: 25),
-            label: Text('Lungo'),
-            selected: logic.filterOptions.cupSizes.lungo,
-            onSelected: (value) {
-              logic.setFilterLungo(value);
-            },
-          ),
-        ),
-        Visibility(
-          visible: logic.filterOptions.filterCupSizes,
-          child: ChoiceChip(
-            avatar: Image.asset('images/cupsize/milk.png', width: 25),
-            label: Text('Milk'),
-            selected: logic.filterOptions.cupSizes.milk,
-            onSelected: (value) {
-              logic.setFilterMilk(value);
-            },
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget caffeine() {
-    return Wrap(
-      spacing: 8.0,
-      runSpacing: 4.0,
-      alignment: WrapAlignment.start,
-      children: [
-        ChoiceChip(
-          label: Text('Caffeine & Decaf'),
+        FilterChip(
+          label: Text('All caffeine contents'),
+          selectedColor: selectedColour,
           selected: !logic.filterOptions.filterCaffeineContent,
           onSelected: (value) {
             logic.setFilterCaffeineContent(!value);
           },
         ),
-        Visibility(
-          visible: logic.filterOptions.filterCaffeineContent,
-          child: ChoiceChip(
-            avatar: Icon(
-              Icons.circle,
-              color: (Colors.grey.shade900),
-            ),
-            label: Text('Caffeine'),
-            selected: logic.filterOptions.caffeineContent.caffeine,
-            onSelected: (value) {
-              logic.setFilterCaffeine(value);
-            },
-          ),
+        FilterChip(
+          label: Text('All cup sizes'),
+          selected: !logic.filterOptions.filterCupSizes,
+          selectedColor: selectedColour,
+          onSelected: (value) {
+            logic.setFilterCupSizes(!value);
+          },
         ),
-        Visibility(
-          visible: logic.filterOptions.filterCaffeineContent,
-          child: ChoiceChip(
-            avatar: Icon(
-              Icons.circle,
-              color: (Colors.red.shade900),
-            ),
-            label: Text('Decaf'),
-            selected: logic.filterOptions.caffeineContent.decaf,
-            onSelected: (value) {
-              logic.setFilterDecaf(value);
-            },
-          ),
+        FilterChip(
+          label: Text('All intensities'),
+          selected: !logic.filterOptions.filterStrengths,
+          selectedColor: selectedColour,
+          onSelected: (value) {
+            logic.setFilterStrengths(!value);
+          },
         ),
       ],
     );
   }
 
-  Wrap freeText() {
+  Wrap _freeText() {
     return Wrap(
       spacing: 8.0,
       runSpacing: 8.0,
       children: [
         TextField(
           decoration: InputDecoration(
+            suffixIcon: Icon(Icons.search),
             hintText: 'Search coffee capsules',
-            border: const OutlineInputBorder(),
           ),
           controller: TextEditingController(text: logic.filterOptions.freeText),
           onChanged: (value) {
             logic.filterOptions.freeText = value;
           },
-          onEditingComplete: () {
-            logic.setFilterFreeText(logic.filterOptions.freeText);
+          onSubmitted: (value) {
+            logic.setFilterFreeText(value);
           },
         )
       ],
+    );
+  }
+
+  Widget _strength() {
+    return Visibility(
+      visible: logic.filterOptions.filterStrengths,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 16.0),
+          Text('Coffee intensities',
+              style: Theme.of(context).textTheme.subtitle2),
+          Wrap(
+            spacing: 8.0,
+            runSpacing: 4.0,
+            alignment: WrapAlignment.start,
+            children: [
+              FilterChip(
+                label: Text('Light (1 to 7)'),
+                selected: logic.filterOptions.strengths.light,
+                selectedColor: selectedColour,
+                onSelected: (value) {
+                  logic.setFilterLightStrength(value);
+                },
+              ),
+              FilterChip(
+                label: Text('Intense (8 to 13)'),
+                selected: logic.filterOptions.strengths.itense,
+                selectedColor: selectedColour,
+                onSelected: (value) {
+                  logic.setFilterIntenseStrength(value);
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _cupSize() {
+    return Visibility(
+      visible: logic.filterOptions.filterCupSizes,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 16.0),
+          Text('Cup sizes', style: Theme.of(context).textTheme.subtitle2),
+          Wrap(
+            spacing: 8.0,
+            runSpacing: 4.0,
+            alignment: WrapAlignment.start,
+            children: [
+              FilterChip(
+                showCheckmark: false,
+                avatar: Image.asset('images/cupsize/ristretto.png', width: 25),
+                label: Text('Ristretto'),
+                selectedColor: selectedColour,
+                selected: logic.filterOptions.cupSizes.ristretto,
+                onSelected: (value) {
+                  logic.setFilterRistretto(value);
+                },
+              ),
+              FilterChip(
+                showCheckmark: false,
+                avatar: Image.asset('images/cupsize/espresso.png', width: 25),
+                label: Text('Espresso'),
+                selectedColor: selectedColour,
+                selected: logic.filterOptions.cupSizes.espresso,
+                onSelected: (value) {
+                  logic.setFilterEspresso(value);
+                },
+              ),
+              FilterChip(
+                showCheckmark: false,
+                avatar: Image.asset('images/cupsize/lungo.png', width: 25),
+                label: Text('Lungo'),
+                selectedColor: selectedColour,
+                selected: logic.filterOptions.cupSizes.lungo,
+                onSelected: (value) {
+                  logic.setFilterLungo(value);
+                },
+              ),
+              FilterChip(
+                showCheckmark: false,
+                avatar: Image.asset('images/cupsize/milk.png', width: 25),
+                label: Text('Milk'),
+                selectedColor: selectedColour,
+                selected: logic.filterOptions.cupSizes.milk,
+                onSelected: (value) {
+                  logic.setFilterMilk(value);
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _caffeine() {
+    return Visibility(
+      visible: logic.filterOptions.filterCaffeineContent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 16.0),
+          Text('Caffeine content',
+              style: Theme.of(context).textTheme.subtitle2),
+          Wrap(
+            spacing: 8.0,
+            runSpacing: 4.0,
+            alignment: WrapAlignment.start,
+            children: [
+              FilterChip(
+                showCheckmark: false,
+                avatar: Icon(
+                  Icons.circle,
+                  color: (Colors.grey.shade900),
+                ),
+                label: Text('Caffeine'),
+                selectedColor: selectedColour,
+                selected: logic.filterOptions.caffeineContent.caffeine,
+                onSelected: (value) {
+                  logic.setFilterCaffeine(value);
+                },
+              ),
+              FilterChip(
+                avatar: Icon(
+                  Icons.circle,
+                  color: (Colors.red.shade900),
+                ),
+                showCheckmark: false,
+                label: Text('Decaf'),
+                selectedColor: selectedColour,
+                selected: logic.filterOptions.caffeineContent.decaf,
+                onSelected: (value) {
+                  logic.setFilterDecaf(value);
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _searchButton() {
+    var capsulesString =
+        logic.projectedResultsCount == 1 ? 'capsule' : 'capsules';
+
+    var allString =
+        (logic.projectedResultsCount == Capsules.data.length) ? 'ALL ' : '';
+
+    return OutlineButton(
+      onPressed: () {
+        logic.filterData();
+        Navigator.pop(context);
+      },
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text('Show'.toUpperCase()),
+          Text(
+            ' $allString${logic.projectedResultsCount} ',
+            style: TextStyle(color: buttonColour, fontWeight: FontWeight.bold),
+          ),
+          Text('$capsulesString'.toUpperCase()),
+        ],
+      ),
     );
   }
 }
