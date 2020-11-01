@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nescap/data/capsule_data.dart';
-import 'package:nescap/data/capsule_data_schema.dart';
-import 'package:nescap/search/search_engine.dart';
-import 'package:nescap/search/search_options.dart';
+import 'package:nescap/capsule_data/capsule_data.dart';
+import 'package:nescap/capsule_data/capsule_data_schema.dart';
+import 'package:nescap/search_logic/search_engine.dart';
+import 'package:nescap/search_logic/search_options.dart';
 
 class NesCapLogic extends ChangeNotifier {
   bool ready;

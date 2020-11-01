@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nescap/data/capsule_data.dart';
-import 'package:nescap/state/nescap_logic.dart';
+import 'package:nescap/application_state/nescap_logic.dart';
+import 'package:nescap/capsule_data/capsule_data.dart';
 import 'package:provider/provider.dart';
 
 class CapsuleSearchDialog extends StatefulWidget {

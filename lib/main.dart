@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/theme/nescap_theme.dart';
 
-import 'app/main_app_state_provider.dart';
-
+import 'app_ui/main_app_state_provider.dart';
 void main() {
   runApp(NesCapApp());
 }

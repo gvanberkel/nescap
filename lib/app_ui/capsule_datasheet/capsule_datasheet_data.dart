@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nescap/components/value_bar.dart';
-import 'package:nescap/data/capsule_data_schema.dart';
+import 'package:nescap/application_state/nescap_logic.dart';
+import 'package:nescap/capsule_data/capsule_data_schema.dart';
+import 'package:nescap/ui_components/value_bar.dart';
 import 'package:provider/provider.dart';
-import '../../state/nescap_logic.dart';
 import 'capsule_datasheet_data_headers.dart';
 import 'datasheet_cell.dart';
 

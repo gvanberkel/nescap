@@ -1,4 +1,5 @@
-import '../data/capsule_data_schema.dart';
+
+import 'package:nescap/capsule_data/capsule_data_schema.dart';
 
 class SearchOptions {
   CupSize cupSizes = CupSize(
