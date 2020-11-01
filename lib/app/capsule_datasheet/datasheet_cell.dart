@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class GridCell extends StatelessWidget {
+class DataSheetCell extends StatelessWidget {
   final Widget child;
   final double height;
   final double width;
   final bool title;
 
-  GridCell({
+  DataSheetCell({
     Key key,
     this.child,
     this.width = 250,

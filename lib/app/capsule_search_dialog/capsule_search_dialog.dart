@@ -3,16 +3,16 @@ import 'package:nescap/data/capsule_data.dart';
 import 'package:nescap/state/nescap_logic.dart';
 import 'package:provider/provider.dart';
 
-class FiltersDialog extends StatefulWidget {
-  FiltersDialog({Key key, @required this.logic}) : super(key: key);
+class CapsuleSearchDialog extends StatefulWidget {
+  CapsuleSearchDialog({Key key, @required this.logic}) : super(key: key);
 
   final NesCapLogic logic;
 
   @override
-  _FiltersDialogState createState() => _FiltersDialogState();
+  _CapsuleSearchDialogState createState() => _CapsuleSearchDialogState();
 }
 
-class _FiltersDialogState extends State<FiltersDialog> {
+class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
   Color selectedColour;
   Color buttonColour;
 
@@ -88,7 +88,9 @@ class _FiltersDialogState extends State<FiltersDialog> {
   Widget filtersDialog(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTap: () {},
+      onTap: () {
+        //onTap declared to make this area ignored by parent dismiss gesture detector
+      },
       child: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Column(
@@ -135,33 +137,33 @@ class _FiltersDialogState extends State<FiltersDialog> {
     );
   }
 
-  Wrap _highLevelFilters() {
+  Widget _highLevelFilters() {
     return Wrap(
       spacing: 8.0,
       runSpacing: 8.0,
       children: [
         FilterChip(
-          label: Text('All caffeine contents'),
+          label: Text('Caffeine'),
           selectedColor: selectedColour,
-          selected: !logic.filterOptions.filterCaffeineContent,
+          selected: logic.filterOptions.filterCaffeineContent,
           onSelected: (value) {
-            logic.setFilterCaffeineContent(!value);
+            logic.setFilterCaffeineContent(value);
           },
         ),
         FilterChip(
-          label: Text('All cup sizes'),
-          selected: !logic.filterOptions.filterCupSizes,
+          label: Text('Cup size'),
+          selected: logic.filterOptions.filterCupSizes,
           selectedColor: selectedColour,
           onSelected: (value) {
-            logic.setFilterCupSizes(!value);
+            logic.setFilterCupSizes(value);
           },
         ),
         FilterChip(
-          label: Text('All intensities'),
-          selected: !logic.filterOptions.filterStrengths,
+          label: Text('Intensity'),
+          selected: logic.filterOptions.filterStrengths,
           selectedColor: selectedColour,
           onSelected: (value) {
-            logic.setFilterStrengths(!value);
+            logic.setFilterStrengths(value);
           },
         ),
       ],

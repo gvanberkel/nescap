@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:nescap/app/capsule_search_dialog/capsule_search_dialog.dart';
 import 'package:nescap/state/nescap_logic.dart';
-import 'package:nescap/widgets/filters_dialog.dart';
 import 'package:provider/provider.dart';
-import 'grid_cell.dart';
+import 'datasheet_cell.dart';
 
-class CapsuleGridHeaders extends StatelessWidget {
+class CapsuleDataSheetHeaders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<NesCapLogic>(
       builder: (_, logic, __) {
         var dataColumns = logic.filteredCapsuleData
             .map(
-              (capsule) => GridCell(
+              (capsule) => DataSheetCell(
                 height: 80,
                 title: true,
                 child: Center(
@@ -27,7 +27,7 @@ class CapsuleGridHeaders extends StatelessWidget {
 
         dataColumns.insert(
             0,
-            GridCell(
+            DataSheetCell(
               height: 80,
               width: 170,
               title: true,
@@ -38,7 +38,7 @@ class CapsuleGridHeaders extends StatelessWidget {
                     barrierDismissible: true,
                     useSafeArea: true,
                     barrierColor: Colors.transparent,
-                    builder: (_) => FiltersDialog(logic: logic),
+                    builder: (_) => CapsuleSearchDialog(logic: logic),
                   );
 
                   logic.showFilters();

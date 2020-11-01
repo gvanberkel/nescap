@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/state/nescap_logic.dart';
 import 'package:provider/provider.dart';
-import 'capsule_grid_data.dart';
+import 'capsule_datasheet_data.dart';
 
-class CapsuleGridViewport extends StatelessWidget {
+class CapsuleDataSheetViewport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<NesCapLogic>(
@@ -15,7 +15,7 @@ class CapsuleGridViewport extends StatelessWidget {
                 constrained: false,
                 panEnabled: true,
                 scaleEnabled: false,
-                child: CapsuleGridData(),
+                child: CapsuleDataSheetData(),
               ),
             ),
           );

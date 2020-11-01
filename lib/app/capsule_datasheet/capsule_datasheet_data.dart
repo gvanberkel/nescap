@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:nescap/components/value_bar.dart';
 import 'package:nescap/data/capsule_data_schema.dart';
 import 'package:provider/provider.dart';
 import '../../state/nescap_logic.dart';
-import 'capsule_grid_headers.dart';
-import 'grid_cell.dart';
-import '../value_bar.dart';
+import 'capsule_datasheet_data_headers.dart';
+import 'datasheet_cell.dart';
 
-class CapsuleGridData extends StatefulWidget {
+class CapsuleDataSheetData extends StatefulWidget {
   @override
-  _CapsuleGridDataState createState() => _CapsuleGridDataState();
+  _CapsuleDataSheetDataState createState() => _CapsuleDataSheetDataState();
 }
 
-class _CapsuleGridDataState extends State<CapsuleGridData> {
+class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
   @override
   Widget build(BuildContext context) {
     return Consumer<NesCapLogic>(
@@ -28,7 +28,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
 
   List<Widget> rows() {
     return [
-      CapsuleGridHeaders(),
+      CapsuleDataSheetHeaders(),
       name(),
       caffeineContent(),
       cupSize(),
@@ -47,7 +47,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               height: 75,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +117,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               child: Center(
                 child: Icon(
                   Icons.circle,
@@ -136,7 +136,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               child: Center(
                   child: SelectableText(capsule.gramsPer10Pack == 0
                       ? ''
@@ -151,7 +151,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               child: ValueBar(
                 maxValue: 13,
                 value: capsule.flavourProfile.intensity,
@@ -166,7 +166,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               child: ValueBar(
                 maxValue: 5,
                 value: capsule.flavourProfile.body,
@@ -181,7 +181,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               child: ValueBar(
                 maxValue: 5,
                 value: capsule.flavourProfile.roasting,
@@ -212,7 +212,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               child: ValueBar(
                 maxValue: 5,
                 value: capsule.flavourProfile.acidity,
@@ -227,7 +227,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               child: ValueBar(
                 maxValue: 5,
                 value: capsule.flavourProfile.bitterness,
@@ -242,7 +242,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
         logic.filteredCapsuleData.map((capsule) {
-          return GridCell(
+          return DataSheetCell(
             child: Center(child: Text(capsule.price.toString())),
           );
         }).toList(),
@@ -262,7 +262,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
             list.addAll(roastingNotes(capsule));
             list.addAll(aromaticProfileNotes(capsule));
 
-            return GridCell(
+            return DataSheetCell(
               height: 2500,
               child: Column(
                 children: list,
@@ -278,7 +278,7 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            return GridCell(
+            return DataSheetCell(
               child: Center(child: SelectableText(capsule.name)),
               height: 80,
             );
@@ -326,11 +326,11 @@ class _CapsuleGridDataState extends State<CapsuleGridData> {
     return list;
   }
 
-  List<GridCell> addFieldName(List<GridCell> list, String fieldName,
+  List<DataSheetCell> addFieldName(List<DataSheetCell> list, String fieldName,
       {double height = 60}) {
     list.insert(
         0,
-        GridCell(
+        DataSheetCell(
           width: 170,
           height: height,
           title: true,
