@@ -24,12 +24,12 @@ class SearchOptions {
   );
   bool filterStrengths = false;
 
-  ResultsLayout resultsLayout = ResultsLayout.DataSheet;
+  ResultsLayout resultsLayout = ResultsLayout.GridOfCapsules;
 
   SearchOptions();
 }
 
-enum ResultsLayout { DataSheet, DrillDown }
+enum ResultsLayout { DataSheet, GridOfCapsules }
 
 class CaffeineContent {
   bool caffeine;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/application_state/nescap_logic.dart';
 import 'package:nescap/capsule_data/capsule_data.dart';
+import 'package:nescap/search_logic/search_options.dart';
 import 'package:provider/provider.dart';
 
 class CapsuleSearchDialog extends StatefulWidget {
@@ -127,6 +128,7 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
             _caffeine(),
             _cupSize(),
             _strength(),
+            _layout(),
             SizedBox(
               height: 8,
             ),
@@ -333,6 +335,45 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _layout() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 16.0),
+        Text('View', style: Theme.of(context).textTheme.subtitle2),
+        Wrap(
+          spacing: 8.0,
+          runSpacing: 4.0,
+          alignment: WrapAlignment.start,
+          children: [
+            ChoiceChip(
+              label: Text('Data sheet'),
+              avatar: Icon(Icons.view_column_outlined),
+              selected:
+                  logic.filterOptions.resultsLayout == ResultsLayout.DataSheet,
+              selectedColor: selectedColour,
+              onSelected: (value) {
+                logic.setResultsLayout(
+                    value ? ResultsLayout.DataSheet : ResultsLayout.GridOfCapsules);
+              },
+            ),
+            ChoiceChip(
+              label: Text('Grid of capsules'),
+              avatar: Icon(Icons.grid_view),
+              selected:
+                  logic.filterOptions.resultsLayout == ResultsLayout.GridOfCapsules,
+              selectedColor: selectedColour,
+              onSelected: (value) {
+                logic.setResultsLayout(
+                    value ? ResultsLayout.GridOfCapsules : ResultsLayout.DataSheet);
+              },
+            ),
+          ],
+        ),
+      ],
     );
   }
 

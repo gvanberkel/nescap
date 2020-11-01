@@ -121,4 +121,9 @@ class NesCapLogic extends ChangeNotifier {
     setProjectedResultsCount();
     notifyListeners();
   }
+
+  void setResultsLayout(ResultsLayout resultsLayout) {
+    this.filterOptions.resultsLayout = resultsLayout;
+    notifyListeners();
+  }
 }
