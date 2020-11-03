@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nescap/app_ui/capsule_details/capsule_details.dart';
 import 'package:nescap/app_ui/capsule_search_dialog/capsule_search_dialog.dart';
 import 'package:nescap/application_state/nescap_logic.dart';
 import 'package:provider/provider.dart';
@@ -15,10 +16,21 @@ class CapsuleDataSheetHeaders extends StatelessWidget {
                 height: 80,
                 title: true,
                 child: Center(
-                  child: Image.asset(
-                    'images/capsules/${capsule.mainImageFileName}',
-                    width: 60,
-                    height: 60,
+                  child: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                        context:   context,
+                        barrierDismissible: true,
+                        useSafeArea: true,
+                        barrierColor: Colors.transparent,
+                        builder: (_) => CapsuleDetails(data: capsule),
+                      );
+                    },
+                    child: Image.asset(
+                      'images/capsules/${capsule.mainImageFileName}',
+                      width: 60,
+                      height: 60,
+                    ),
                   ),
                 ),
               ),
