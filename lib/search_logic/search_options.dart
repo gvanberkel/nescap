@@ -1,4 +1,3 @@
-
 import 'package:nescap/capsule_data/capsule_data_schema.dart';
 
 class SearchOptions {
@@ -24,12 +23,9 @@ class SearchOptions {
   );
   bool filterStrengths = false;
 
-  ResultsLayout resultsLayout = ResultsLayout.GridOfCapsules;
-
   SearchOptions();
 }
 
-enum ResultsLayout { DataSheet, GridOfCapsules }
 
 class CaffeineContent {
   bool caffeine;

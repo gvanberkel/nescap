@@ -392,7 +392,7 @@ class Capsules {
         price: 90,
         mainImageFileName: 'linizio.png',
         caffeine: true,
-        gramsPer10Pack: 50,
+        gramsPer10Pack: 55,
         cupSize: CupSize(
           lungo: true,
           milk: true,

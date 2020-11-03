@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/theme/nescap_theme.dart';
 
-import 'app_ui/main_app_state_provider.dart';
+import 'app_ui/main_app_bootstrap.dart';
 void main() {
   runApp(NesCapApp());
 }
@@ -17,7 +17,7 @@ class NesCapApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       theme: nesCapTheme.themeData,
-      home: MainAppStateProvider(),
+      home: MainAppBootstrap(),
     );
   }
 }

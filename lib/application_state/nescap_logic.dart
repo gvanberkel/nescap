@@ -4,8 +4,13 @@ import 'package:nescap/capsule_data/capsule_data_schema.dart';
 import 'package:nescap/search_logic/search_engine.dart';
 import 'package:nescap/search_logic/search_options.dart';
 
+enum ResultsLayout { BestSuitedToConstraints, DataSheet, GridOfCapsules }
+
 class NesCapLogic extends ChangeNotifier {
   bool ready;
+
+  ResultsLayout resultsLayout = ResultsLayout.BestSuitedToConstraints;
+  ResultsLayout currentResultsLayout;
 
   bool filtersVisible = false;
   SearchOptions filterOptions;
@@ -122,8 +127,20 @@ class NesCapLogic extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setCurrentResultsLayout(BoxConstraints constraints) {
+    if (resultsLayout == ResultsLayout.BestSuitedToConstraints) {
+      if (constraints.maxWidth > 700)
+        currentResultsLayout = ResultsLayout.DataSheet;
+      else
+        currentResultsLayout = ResultsLayout.GridOfCapsules;
+    } else {
+      currentResultsLayout = resultsLayout;
+    }
+  }
+
   void setResultsLayout(ResultsLayout resultsLayout) {
-    this.filterOptions.resultsLayout = resultsLayout;
+    if (resultsLayout == null) return;
+    this.resultsLayout = resultsLayout;
     notifyListeners();
   }
 }

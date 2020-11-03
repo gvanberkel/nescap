@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/application_state/nescap_logic.dart';
 import 'package:nescap/capsule_data/capsule_data.dart';
-import 'package:nescap/search_logic/search_options.dart';
 import 'package:provider/provider.dart';
 
 class CapsuleSearchDialog extends StatefulWidget {
@@ -80,61 +79,61 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
         else {
           return Container(
               color: Theme.of(context).dialogBackgroundColor,
-              child: filtersDialog(context));
+              child: GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTap: () {
+                  //onTap declared to make this area ignored by parent dismiss gesture detector
+                },
+                child: filtersDialog(context),
+              ));
         }
       },
     );
   }
 
   Widget filtersDialog(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () {
-        //onTap declared to make this area ignored by parent dismiss gesture detector
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(left: 8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 16,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                  alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.all(0),
-                  icon: Icon(Icons.arrow_back),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                Text(
-                  'Explore capsules',
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            _freeText(),
-            SizedBox(
-              height: 8,
-            ),
-            _highLevelFilters(),
-            _caffeine(),
-            _cupSize(),
-            _strength(),
-            _layout(),
-            SizedBox(
-              height: 8,
-            ),
-            _searchButton()
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 16,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              IconButton(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.all(0),
+                icon: Icon(Icons.arrow_back),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              Text(
+                'Explore capsules',
+                style: Theme.of(context).textTheme.headline6,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          _freeText(),
+          SizedBox(
+            height: 8,
+          ),
+          _highLevelFilters(),
+          _caffeine(),
+          _cupSize(),
+          _strength(),
+          _layout(),
+          SizedBox(
+            height: 8,
+          ),
+          _searchButton()
+        ],
       ),
     );
   }
@@ -350,25 +349,33 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
           alignment: WrapAlignment.start,
           children: [
             ChoiceChip(
-              label: Text('Data sheet'),
-              avatar: Icon(Icons.view_column_outlined),
+              label: Text('Auto'),
+              avatar: Icon(Icons.auto_awesome_mosaic),
               selected:
-                  logic.filterOptions.resultsLayout == ResultsLayout.DataSheet,
+                  logic.resultsLayout == ResultsLayout.BestSuitedToConstraints,
               selectedColor: selectedColour,
               onSelected: (value) {
                 logic.setResultsLayout(
-                    value ? ResultsLayout.DataSheet : ResultsLayout.GridOfCapsules);
+                    value ? ResultsLayout.BestSuitedToConstraints : null);
+              },
+            ),
+            ChoiceChip(
+              label: Text('Data sheet'),
+              avatar: Icon(Icons.view_column),
+              selected: logic.resultsLayout == ResultsLayout.DataSheet,
+              selectedColor: selectedColour,
+              onSelected: (value) {
+                logic.setResultsLayout(value ? ResultsLayout.DataSheet : null);
               },
             ),
             ChoiceChip(
               label: Text('Grid of capsules'),
               avatar: Icon(Icons.grid_view),
-              selected:
-                  logic.filterOptions.resultsLayout == ResultsLayout.GridOfCapsules,
+              selected: logic.resultsLayout == ResultsLayout.GridOfCapsules,
               selectedColor: selectedColour,
               onSelected: (value) {
                 logic.setResultsLayout(
-                    value ? ResultsLayout.GridOfCapsules : ResultsLayout.DataSheet);
+                    value ? ResultsLayout.GridOfCapsules : null);
               },
             ),
           ],
