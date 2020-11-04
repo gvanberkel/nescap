@@ -115,6 +115,8 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
                 'Explore capsules',
                 style: Theme.of(context).textTheme.headline6,
               ),
+              Spacer(flex: 1),
+              _layoutSettings(),
             ],
           ),
           SizedBox(
@@ -128,7 +130,6 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
           _caffeine(),
           _cupSize(),
           _strength(),
-          _layout(),
           SizedBox(
             height: 8,
           ),
@@ -337,50 +338,49 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
     );
   }
 
-  Widget _layout() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 16.0),
-        Text('View', style: Theme.of(context).textTheme.subtitle2),
-        Wrap(
-          spacing: 8.0,
-          runSpacing: 4.0,
-          alignment: WrapAlignment.start,
-          children: [
-            ChoiceChip(
-              label: Text('Auto'),
-              avatar: Icon(Icons.auto_awesome_mosaic),
-              selected:
-                  logic.resultsLayout == ResultsLayout.BestSuitedToConstraints,
-              selectedColor: selectedColour,
-              onSelected: (value) {
-                logic.setResultsLayout(
-                    value ? ResultsLayout.BestSuitedToConstraints : null);
-              },
+  Widget _layoutSettings() {
+    return PopupMenuButton<ResultsLayout>(
+      onSelected: (ResultsLayout result) {
+        logic.setResultsLayout(result);
+      },
+      child: Row(children: [Icon(Icons.settings), SizedBox(width:4.0), Text('Layout settings'), SizedBox(width:2.0)]),
+      itemBuilder: (BuildContext context) {
+        return [
+          PopupMenuItem<ResultsLayout>(
+            value: ResultsLayout.BestSuitedToConstraints,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.auto_awesome_mosaic),
+                SizedBox(width: 4.0),
+                Text('Auto (orientation & screen)'),
+              ],
             ),
-            ChoiceChip(
-              label: Text('Data sheet'),
-              avatar: Icon(Icons.view_column),
-              selected: logic.resultsLayout == ResultsLayout.DataSheet,
-              selectedColor: selectedColour,
-              onSelected: (value) {
-                logic.setResultsLayout(value ? ResultsLayout.DataSheet : null);
-              },
+          ),
+          PopupMenuItem<ResultsLayout>(
+            value: ResultsLayout.DataSheet,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.view_column),
+                SizedBox(width: 4.0),
+                Text('Data sheet'),
+              ],
             ),
-            ChoiceChip(
-              label: Text('Grid of capsules'),
-              avatar: Icon(Icons.grid_view),
-              selected: logic.resultsLayout == ResultsLayout.GridOfCapsules,
-              selectedColor: selectedColour,
-              onSelected: (value) {
-                logic.setResultsLayout(
-                    value ? ResultsLayout.GridOfCapsules : null);
-              },
+          ),
+          PopupMenuItem<ResultsLayout>(
+            value: ResultsLayout.GridOfCapsules,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.grid_view),
+                SizedBox(width: 4.0),
+                Text('Grid of capsules'),
+              ],
             ),
-          ],
-        ),
-      ],
+          ),
+        ];
+      },
     );
   }
 
