@@ -15,7 +15,7 @@ class NesCapLogic extends ChangeNotifier {
   bool filtersVisible = false;
   SearchOptions filterOptions;
   List<CapsuleData> filteredCapsuleData;
-  int projectedResultsCount = 0;
+  List<CapsuleData> projectedResults;
 
   NesCapLogic({this.filterOptions}) {
     ready = false;
@@ -45,7 +45,7 @@ class NesCapLogic extends ChangeNotifier {
 
   void filterData() {
     this.filteredCapsuleData = SearchEngine.filter(filterOptions);
-    this.projectedResultsCount = this.filteredCapsuleData.length;
+    this.projectedResults = this.filteredCapsuleData;
     this.filtersVisible = false;
     notifyListeners();
   }
@@ -118,7 +118,7 @@ class NesCapLogic extends ChangeNotifier {
   }
 
   void setProjectedResultsCount() {
-    projectedResultsCount = SearchEngine.filter(filterOptions).length;
+    projectedResults = SearchEngine.filter(filterOptions);
   }
 
   void setFilterFreeText(String value) {

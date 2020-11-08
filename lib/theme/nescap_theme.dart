@@ -17,4 +17,7 @@ class NesCapTheme {
       primaryColor: Colors.yellow.shade800,
     );
   }
+
+  static Color selectedColour;
+
 }

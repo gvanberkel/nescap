@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/app_ui/capsule_details/capsule_details.dart';
-import 'package:nescap/app_ui/capsule_search_dialog/capsule_search_dialog.dart';
+import 'package:nescap/app_ui/capsule_search/capsule_search_dialog.dart';
 import 'package:nescap/application_state/nescap_logic.dart';
 import 'package:provider/provider.dart';
 import 'datasheet_cell.dart';
@@ -19,7 +19,7 @@ class CapsuleDataSheetHeaders extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       showDialog(
-                        context:   context,
+                        context: context,
                         barrierDismissible: true,
                         useSafeArea: true,
                         barrierColor: Colors.transparent,
