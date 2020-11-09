@@ -137,21 +137,6 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-  List<Widget> roastingNotes(CapsuleData capsule) {
-    var list = List<Widget>();
-    if (capsule.flavourProfile.roastingNotes == '') return list;
-
-    list.add(Text(
-      'Roasting',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-      ),
-    ));
-
-    list.add(SelectableText(capsule.flavourProfile.roastingNotes));
-
-    return list;
-  }
 
   Row acidity() {
     return Row(
@@ -200,12 +185,7 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     return Row(
       children: addFieldName(
           logic.filteredCapsuleData.map((capsule) {
-            var list = List<Widget>();
-
-            list.addAll(story(capsule));
-            list.addAll(origin(capsule));
-            list.addAll(roastingNotes(capsule));
-            list.addAll(aromaticProfileNotes(capsule));
+            var list = descriptionTextWidgetList(capsule);
 
             return DataSheetCell(
               height: 2500,
@@ -218,6 +198,7 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
           height: 2500),
     );
   }
+
 
   Row name() {
     return Row(
@@ -233,43 +214,11 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-  List<Widget> aromaticProfileNotes(CapsuleData capsule) {
-    var list = List<Widget>();
 
-    if (capsule.flavourProfile.aromaticProfileNotes == '') return list;
 
-    list.add(Text(
-      'Aromatic profile',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-      ),
-    ));
-    list.add(SelectableText(capsule.flavourProfile.aromaticProfileNotes));
 
-    return list;
-  }
 
-  List<Widget> story(CapsuleData capsule) {
-    var list = List<Widget>();
-    if (capsule.story == '') return list;
-    list.add(SelectableText(capsule.story));
-    return list;
-  }
 
-  List<Widget> origin(CapsuleData capsule) {
-    var list = List<Widget>();
-    if (capsule.orgin == '') return list;
-
-    list.add(Text(
-      'Origin',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-      ),
-    ));
-
-    list.add(SelectableText(capsule.orgin));
-    return list;
-  }
 
   List<DataSheetCell> addFieldName(List<DataSheetCell> list, String fieldName,
       {double height = 60}) {
@@ -285,3 +234,64 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
   }
 }
 
+List<Widget> descriptionTextWidgetList(CapsuleData capsule) {
+  List<Widget> list = new List<Widget>();
+  list.addAll(story(capsule));
+  list.addAll(origin(capsule));
+  list.addAll(roastingNotes(capsule));
+  list.addAll(aromaticProfileNotes(capsule));
+  return list;
+}
+
+List<Widget> story(CapsuleData capsule) {
+  var list = List<Widget>();
+  if (capsule.story == '') return list;
+  list.add(SelectableText(capsule.story));
+  return list;
+}
+List<Widget> origin(CapsuleData capsule) {
+  var list = List<Widget>();
+  if (capsule.orgin == '') return list;
+
+  list.add(Text(
+    'Origin',
+    style: TextStyle(
+      fontWeight: FontWeight.bold,
+    ),
+  ));
+
+  list.add(SelectableText(capsule.orgin));
+  return list;
+}
+
+List<Widget> aromaticProfileNotes(CapsuleData capsule) {
+  var list = List<Widget>();
+
+  if (capsule.flavourProfile.aromaticProfileNotes == '') return list;
+
+  list.add(Text(
+    'Aromatic profile',
+    style: TextStyle(
+      fontWeight: FontWeight.bold,
+    ),
+  ));
+  list.add(SelectableText(capsule.flavourProfile.aromaticProfileNotes));
+
+  return list;
+}
+
+List<Widget> roastingNotes(CapsuleData capsule) {
+  var list = List<Widget>();
+  if (capsule.flavourProfile.roastingNotes == '') return list;
+
+  list.add(Text(
+    'Roasting',
+    style: TextStyle(
+      fontWeight: FontWeight.bold,
+    ),
+  ));
+
+  list.add(SelectableText(capsule.flavourProfile.roastingNotes));
+
+  return list;
+}

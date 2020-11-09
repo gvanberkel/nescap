@@ -24,11 +24,11 @@ class CupSizeWidget extends StatelessWidget {
 class SingleCupSize extends StatelessWidget {
   final String imagePath;
   final bool showLabels;
-  final int width;
+  final double width;
 
   final String labelName;
 
-  const SingleCupSize({Key key, @required this.imagePath, this.showLabels, this.width, this.labelName})
+  const SingleCupSize({Key key, @required this.imagePath, this.showLabels = true, this.width = 25, @required this.labelName})
       : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class SingleCupSize extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(imagePath, width: 25),
+        Image.asset(imagePath, width: width),
         if (showLabels)
           Padding(
             padding: const EdgeInsets.only(right: 3),
