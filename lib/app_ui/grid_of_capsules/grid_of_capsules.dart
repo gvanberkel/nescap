@@ -39,13 +39,13 @@ class GridOfCapsules extends StatelessWidget {
                         .map(
                           (capsule) => GestureDetector(
                             onTap: () {
-                              showDialog(
-                                context: context,
-                                barrierDismissible: true,
-                                useSafeArea: true,
-                                barrierColor: Colors.transparent,
-                                builder: (_) => CapsuleDetails(data: capsule),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    fullscreenDialog: true,
+                                    builder: (_) => CapsuleDetails(data: capsule),)
                               );
+
                             },
                             child: Image.asset(
                                 'images/capsules/${capsule.mainImageFileName}'),

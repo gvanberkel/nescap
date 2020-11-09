@@ -4,6 +4,7 @@ import 'package:nescap/capsule_data/capsule_data_schema.dart';
 import 'package:nescap/ui_components/value_bar.dart';
 import 'package:provider/provider.dart';
 import 'capsule_datasheet_data_headers.dart';
+import 'cup_size_widget.dart';
 import 'datasheet_cell.dart';
 
 class CapsuleDataSheetData extends StatefulWidget {
@@ -49,63 +50,7 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               height: 75,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (capsule.cupSize.ristretto)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset('images/cupsize/ristretto.png', width: 25),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 3),
-                          child: Text('r',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 12)),
-                        ),
-                      ],
-                    ),
-                  if (capsule.cupSize.espresso)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset('images/cupsize/espresso.png', width: 25),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 3),
-                          child: Text('e',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 12)),
-                        ),
-                      ],
-                    ),
-                  if (capsule.cupSize.lungo)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset('images/cupsize/lungo.png', width: 25),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 1),
-                          child: Text('L',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 12)),
-                        ),
-                      ],
-                    ),
-                  if (capsule.cupSize.milk)
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset('images/cupsize/milk.png', width: 25),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 3),
-                          child: Text('m',
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 12)),
-                        ),
-                      ],
-                    ),
-                ],
-              ),
+              child: CupSizeWidget(capsule: capsule, showLabels: true),
             );
           }).toList(),
           'Cup size',
@@ -339,3 +284,4 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     return list;
   }
 }
+
