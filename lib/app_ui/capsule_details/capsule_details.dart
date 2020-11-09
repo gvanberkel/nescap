@@ -15,7 +15,7 @@ class CapsuleDetails extends StatelessWidget {
         title: Text(data.name),
         leading: IconButton(
           icon: Icon(Icons.close),
-          onPressed: (){
+          onPressed: () {
             Navigator.pop(context);
           },
         ),
@@ -30,17 +30,24 @@ class CapsuleDetails extends StatelessWidget {
             title: Text('Caffeine Content'),
             trailing: Icon(
               Icons.circle,
-              color: (data.caffeine
-                  ? Colors.grey.shade900
-                  : Colors.red.shade900),
+              color:
+                  (data.caffeine ? Colors.grey.shade900 : Colors.red.shade900),
             ),
           ),
           ListTile(
             title: Text('Cup Size'),
-            trailing: CupSizeWidget(capsule: data, showLabels: false,)
-          )
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CupSizeWidget(
+                  capsule: data,
+                  showLabels: false,
+                ),
+              ],
+            ),
+          ),
         ],
-      )
+      ),
     );
   }
 }
