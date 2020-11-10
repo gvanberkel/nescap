@@ -15,6 +15,7 @@ class NesCapTheme {
       brightness: this.brightness,
       platform: TargetPlatform.android,
       primaryColor: Colors.yellow.shade800,
+      
     );
   }
 

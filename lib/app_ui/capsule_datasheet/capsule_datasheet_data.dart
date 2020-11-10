@@ -30,23 +30,23 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
   List<Widget> rows() {
     return [
       CapsuleDataSheetHeaders(),
-      name(),
+      _name(),
       caffeineContent(),
       cupSize(),
       grams(),
-      price(),
+      _price(),
       intensity(),
-      acidity(),
-      bitterness(),
-      body(),
-      roasting(),
-      descriptions(),
+      _acidity(),
+      _bitterness(),
+      _body(),
+      _roasting(),
+      _descriptions(),
     ];
   }
 
   Row cupSize() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               height: 75,
@@ -60,7 +60,7 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
 
   Row caffeineContent() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               child: Center(
@@ -79,7 +79,7 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
 
   Row grams() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               child: Center(
@@ -94,7 +94,7 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
 
   Row intensity() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               child: ValueBar(
@@ -107,9 +107,9 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-  Row body() {
+  Row _body() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               child: ValueBar(
@@ -122,9 +122,9 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-  Row roasting() {
+  Row _roasting() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               child: ValueBar(
@@ -137,10 +137,9 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-
-  Row acidity() {
+  Row _acidity() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               child: ValueBar(
@@ -153,9 +152,9 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-  Row bitterness() {
+  Row _bitterness() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               child: ValueBar(
@@ -168,9 +167,9 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-  Row price() {
+  Row _price() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
         logic.filteredCapsuleData.map((capsule) {
           return DataSheetCell(
             child: Center(child: Text(capsule.price.toString())),
@@ -181,9 +180,9 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-  Row descriptions() {
+  Row _descriptions() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             var list = descriptionTextWidgetList(capsule);
 
@@ -199,10 +198,9 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-
-  Row name() {
+  Row _name() {
     return Row(
-      children: addFieldName(
+      children: _addFieldName(
           logic.filteredCapsuleData.map((capsule) {
             return DataSheetCell(
               child: Center(child: SelectableText(capsule.name)),
@@ -214,13 +212,7 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
     );
   }
 
-
-
-
-
-
-
-  List<DataSheetCell> addFieldName(List<DataSheetCell> list, String fieldName,
+  List<DataSheetCell> _addFieldName(List<DataSheetCell> list, String fieldName,
       {double height = 60}) {
     list.insert(
         0,
@@ -234,22 +226,24 @@ class _CapsuleDataSheetDataState extends State<CapsuleDataSheetData> {
   }
 }
 
+//Create CapsuleDescriptionText widget that takes in CapsuleData
 List<Widget> descriptionTextWidgetList(CapsuleData capsule) {
   List<Widget> list = new List<Widget>();
-  list.addAll(story(capsule));
-  list.addAll(origin(capsule));
-  list.addAll(roastingNotes(capsule));
-  list.addAll(aromaticProfileNotes(capsule));
+  list.addAll(_story(capsule));
+  list.addAll(_origin(capsule));
+  list.addAll(_roastingNotes(capsule));
+  list.addAll(_aromaticProfileNotes(capsule));
   return list;
 }
 
-List<Widget> story(CapsuleData capsule) {
+List<Widget> _story(CapsuleData capsule) {
   var list = List<Widget>();
   if (capsule.story == '') return list;
   list.add(SelectableText(capsule.story));
   return list;
 }
-List<Widget> origin(CapsuleData capsule) {
+
+List<Widget> _origin(CapsuleData capsule) {
   var list = List<Widget>();
   if (capsule.orgin == '') return list;
 
@@ -264,7 +258,7 @@ List<Widget> origin(CapsuleData capsule) {
   return list;
 }
 
-List<Widget> aromaticProfileNotes(CapsuleData capsule) {
+List<Widget> _aromaticProfileNotes(CapsuleData capsule) {
   var list = List<Widget>();
 
   if (capsule.flavourProfile.aromaticProfileNotes == '') return list;
@@ -280,7 +274,7 @@ List<Widget> aromaticProfileNotes(CapsuleData capsule) {
   return list;
 }
 
-List<Widget> roastingNotes(CapsuleData capsule) {
+List<Widget> _roastingNotes(CapsuleData capsule) {
   var list = List<Widget>();
   if (capsule.flavourProfile.roastingNotes == '') return list;
 

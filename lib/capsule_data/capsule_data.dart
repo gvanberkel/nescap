@@ -401,22 +401,18 @@ class Capsules {
           aromaticNotes: [AromaticNotes.Balanced],
           aromaticProfile: [AromaticProfile.Round, AromaticProfile.Smooth],
           intensity: 4,
-          roastingNotes: '''
-            The Brazilian coffee is lightly roasted - it keeps it smooth and with all the Bourbon variety’s malty cereal notes intact. The washed Colombian coffee beans gets a short roast to release all its finer aromatics. A fine grind adds a glimmer of intensity to this harmonious Lungo coffee.
-          ''',
-          aromaticProfileNotes: '''
-            The Linizio Lungo Arabica coffee blend is remarkably rounded and smooth. You can’t miss the warming notes of malty cereal that shine through this blend of South American sunshine. That’s early joy.
-            ''',
+          roastingNotes:
+              '''The Brazilian coffee is lightly roasted - it keeps it smooth and with all the Bourbon variety’s malty cereal notes intact. The washed Colombian coffee beans gets a short roast to release all its finer aromatics. A fine grind adds a glimmer of intensity to this harmonious Lungo coffee.''',
+          aromaticProfileNotes:
+              '''The Linizio Lungo Arabica coffee blend is remarkably rounded and smooth. You can’t miss the warming notes of malty cereal that shine through this blend of South American sunshine. That’s early joy.''',
         ),
       ),
       CapsuleData(
         name: 'Ispirazione Napoli',
-        story: '''
-          Ispirazione Napoli is inspired by the intense dark coffee seen in this city. A coffee in Naples is more than just a coffee, it’s a deep-rooted ritual held by the locals. It’s home to the Neapolitan flip coffee pot that turned aristocratic coffee into everyman’s daily habit. It’s home to the suspended coffee tradition of buying two coffees but drinking one and leaving the receipt for the second to be claimed later by someone less well-off. City of grit and beauty, it’s home to short, dark, strong and creamy coffee. We crafted Ispirazione Napoli to honor the city’s rich coffee tradition and the popular bond it creates. It takes real skill to roast to the intense degree they do in Naples. The boldness of Ispirazione Napoli‘s roast endeavors to pay tribute to the expertise of the local roasters from Italy’s coffee capital. We created Ispirazione Napoli to be our darkest and most intense roast to reflect this traditional Neapolitan coffee. We carefully selected beans that could stand up to this degree of roasting. Ispirazione Napoli delivers an extremely thick body, a creamy mouthfeel, and a delicious bitter note that lingers in its aftertaste.
-          ''',
-        orgin: '''
-          We created Ispirazione Napoli as a blend of Robusta from Uganda touched with Arabcia from. We carefully selected coffees that could stand up to the intense roasting this blend calls for – bold coffees that would develop the gritty yet beautiful aromas, tastes, and textures that reflect Naples’ deep-rooted coffee history and traditions.
-          ''',
+        story:
+            '''Ispirazione Napoli is inspired by the intense dark coffee seen in this city. A coffee in Naples is more than just a coffee, it’s a deep-rooted ritual held by the locals. It’s home to the Neapolitan flip coffee pot that turned aristocratic coffee into everyman’s daily habit. It’s home to the suspended coffee tradition of buying two coffees but drinking one and leaving the receipt for the second to be claimed later by someone less well-off. City of grit and beauty, it’s home to short, dark, strong and creamy coffee. We crafted Ispirazione Napoli to honor the city’s rich coffee tradition and the popular bond it creates. It takes real skill to roast to the intense degree they do in Naples. The boldness of Ispirazione Napoli‘s roast endeavors to pay tribute to the expertise of the local roasters from Italy’s coffee capital. We created Ispirazione Napoli to be our darkest and most intense roast to reflect this traditional Neapolitan coffee. We carefully selected beans that could stand up to this degree of roasting. Ispirazione Napoli delivers an extremely thick body, a creamy mouthfeel, and a delicious bitter note that lingers in its aftertaste.''',
+        orgin:
+            '''We created Ispirazione Napoli as a blend of Robusta from Uganda touched with Arabcia from. We carefully selected coffees that could stand up to the intense roasting this blend calls for – bold coffees that would develop the gritty yet beautiful aromas, tastes, and textures that reflect Naples’ deep-rooted coffee history and traditions.''',
         mainImageFileName: 'napoli.png',
         caffeine: true,
         gramsPer10Pack: 57,
@@ -435,12 +431,10 @@ class Capsules {
             AromaticProfile.ExceptionallyDark,
             AromaticProfile.Creamy
           ],
-          roastingNotes: '''
-            Ispirazione Napoli’s very dark and intense roast reflects Naples’ traditional dark roasting method. Long ago, you could walk the narrow lanes of Naples and catch the bold aroma of this roast as Neapolitans roast their coffee in the ground floor homes that opened out into the street. During this deep roast, the coffee beans develop gritty yet beautiful characteristics. This is reflected in a thick, velvety body, the creamy mouthfeel, and the delicious bitter note. It takes real skill to roast to such a degree, and the boldness of Ispirazione Napoli’s roast endeavors to be an homage to the skill we’ve long seen in the Italian capital of coffee.
-            ''',
-          aromaticProfileNotes: '''
-            Ispirazione Napoli pays tribute to the short, strong and dark espressos of this southern Italian coastal city – a thing of grit and beauty. It’s a velvety, creamy cup with an extremely thick body and a kiss of pleasant bitterness in its aftertaste.
-            ''',
+          roastingNotes:
+              '''Ispirazione Napoli’s very dark and intense roast reflects Naples’ traditional dark roasting method. Long ago, you could walk the narrow lanes of Naples and catch the bold aroma of this roast as Neapolitans roast their coffee in the ground floor homes that opened out into the street. During this deep roast, the coffee beans develop gritty yet beautiful characteristics. This is reflected in a thick, velvety body, the creamy mouthfeel, and the delicious bitter note. It takes real skill to roast to such a degree, and the boldness of Ispirazione Napoli’s roast endeavors to be an homage to the skill we’ve long seen in the Italian capital of coffee.''',
+          aromaticProfileNotes:
+              '''Ispirazione Napoli pays tribute to the short, strong and dark espressos of this southern Italian coastal city – a thing of grit and beauty. It’s a velvety, creamy cup with an extremely thick body and a kiss of pleasant bitterness in its aftertaste.''',
         ),
       ),
       CapsuleData(

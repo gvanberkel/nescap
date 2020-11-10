@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:nescap/app_ui/capsule_datasheet/cup_size_widget.dart';
 import 'package:nescap/app_ui/capsule_datasheet/capsule_datasheet_data.dart';
