@@ -32,6 +32,91 @@ class Capsules {
         ),
       ),
       CapsuleData(
+        name: 'Il Caffè',
+        story:
+            'Il Caffè takes you right to the heart of the classic Italian espresso experience. Vietnamese and Indonesian Washed Robustas graced with a little Colombian Arabica hit that punchy combination of smooth, velvety taste and roasty, cereal aromas.',
+        mainImageFileName: 'ilcaffe.png',
+        orgin:
+            'To hit the intense note reminiscent of your classic Italian espresso, we began with two powerful-tasting Washed Robustas – from Vietnam and Indonesia – to form the base of this blend. We brought in a touch of Washed Colombian Arabica beans to round out the blend and bring to it a hint of acidity.',
+        caffeine: true,
+        gramsPer10Pack: 58,
+        price: 100,
+        cupSize: CupSize(
+          ristretto: true,
+          espresso: true,
+        ),
+        flavourProfile: FlavourProfile(
+          acidity: 1,
+          bitterness: 5,
+          body: 4,
+          intensity: 13,
+          roasting: 5,
+          roastingNotes:
+              'The Robusta coffees in Il Caffè get a darker roast than the Arabica coffee. A darker but medium length roast is what builds the intensity and boldness in these Robustas, giving them a long-lasting taste. Going a little lighter but a little longer on the Colombian Arabica’s roast is what keeps the touch of acidity and a slight nutty note.',
+          aromaticProfileNotes:
+              'One sip of Il Caffè offers your palate the complete Italian espresso experience. A robust coffee full of roasty cereal notes, the smooth and velvety texture goes down like a dream. Hints of peppery spice add to this classic espresso’s intensity. Its lingering aftertaste makes this one coffee you won’t quickly forget.',
+          aromaticNotes: [AromaticNotes.Intense],
+          aromaticProfile: [AromaticProfile.Cereal, AromaticProfile.Spicy],
+        ),
+      ),
+      CapsuleData(
+        name: 'Variations Italia Torta Di Nocciole Flavour',
+        story:
+            'Variations Italia Torta Di Nocciole Flavour espresso fills out the South American Arabicas’ lasting cereal taste with notes of toasted hazelnut and vanilla. Like coffee and cake, this espresso is a warm and welcoming treat to celebrate the moment together.',
+        mainImageFileName: 'nocciole.png',
+        orgin:
+            'The base espresso for the Variations Italia flavoured coffees is known for being incredibly round and smooth. In this Arabica coffee blend, you’re in the good company of the finest South American coffees – really rounded and smooth Brazilian Bourbon Arabica beans in harmony with washed Colombian Arabica. The toasted hazelnut and vanilla flavours round out this blend even more – you’ll taste a nutty spice and bittersweet caramel flavour coming through the roasted coffee aromas.',
+        caffeine: true,
+        price: 100,
+        gramsPer10Pack: 0,
+        cupSize: CupSize(
+          ristretto: true,
+          espresso: true,
+          milk: true,
+          lungo: true,
+        ),
+        flavourProfile: FlavourProfile(
+          acidity: 1,
+          bitterness: 1,
+          body: 2,
+          roasting: 2,
+          roastingNotes:
+              'Split roast, the Brazilian coffee is lightly roasted to keep it smooth and with all its malted cereal notes intact, while the majority of the Colombian coffee beans get a short roast to release all their finer aromatics. A fine grind adds a glimmer of intensity to this harmonious coffee.',
+          aromaticProfileNotes:
+              'Sink your teeth into a Nespresso Variations Italia Torta Di Nocciole Flavour espresso and taste how the toasted hazelnut and sweet cereal aromas win your heart. This flavoured Variations coffee capsule delivers an espresso that’s round and smooth and reminiscent of freshly baked treats.',
+          aromaticNotes: [AromaticNotes.Hazelnut],
+          aromaticProfile: [AromaticProfile.Hazelnut],
+        ),
+      ),
+      CapsuleData(
+        name: 'Variations Italia Amaretti Flavour',
+        story:
+            'The meal might have ended, but Variations Italia Amaretti Flavour lets you linger. It’s the espresso to delight everyone’s senses – the bittersweet almond and vanilla aromas striking a beautiful balance with the South American Arabicas’ lingering cereal character and surprising you with its zesty fruit note. Roast and ground coffee, natural flavouring. Amaretti Flavoured.',
+        mainImageFileName: 'amaretti.png',
+        orgin:
+            'The base espresso for the Variations Italia flavoured coffee is known for being incredibly round and smooth. In this Arabica coffee blend, you’re in the good company of the finest South American coffees – really rounded and smooth Brazilian Bourbon Arabica beans in harmony with washed Colombian Arabica. The bittersweet almond and vanilla aromas strike a beautiful balance with the South American Arabicas’ lingering cereal character and surprising zesty fruit note.',
+        caffeine: true,
+        price: 100,
+        cupSize: CupSize(
+          ristretto: true,
+          espresso: true,
+          milk: true,
+          lungo: true,
+        ),
+        flavourProfile: FlavourProfile(
+          acidity: 1,
+          bitterness: 1,
+          body: 2,
+          roasting: 2,
+          roastingNotes:
+              'Split roast, the Brazilian coffee is lightly roasted to keep it smooth and with all its malted cereal notes intact, while the majority of the Colombian coffee beans get a short roast to release all their finer aromatics. A fine grind adds a glimmer of intensity to this harmonious coffee.',
+          aromaticProfileNotes:
+              'Bittersweet almond and warming vanilla land on a base of malted cereal – that’s Variations Italia Amaretti Flavour. This flavoured coffee capsule is both zesty and warming – its almond and vanilla flavours embrace your palate and promise to lift your spirits this season.',
+          aromaticNotes: [AromaticNotes.Amaretti],
+          aromaticProfile: [AromaticProfile.Amaretti],
+        ),
+      ),
+      CapsuleData(
         name: 'Ispirazione Firenze Arpeggio Decaffeinato',
         story:
             'Ispirazione Firenze Arpeggio Decaffeinato is inspired by Florence, an intellectual hub drawing influences from all the country. This city was not only shaped by its geographical position at the center of the country, but also by its being an intangible center. Florence is the home of the Renaissance – a beating literary, political and artistic heart. From this epicenter, influence flowed, and to it, influencers came. This intellectual city took the best of everything , and Ispirazione Firenze Arpeggio Decaffeinato’s roasting style brings these influences together by combining fruity notes traditionally found in the North of Italy with cocoa notes from the South. IIspirazione Firenze Arpeggio Decaffeinato is a blend of short and dark roasted decaffeinated Latin American Arabicas that celebrates the inspiration we got from local artisans who drew their influences from all across the country. It harmoniously combines the lighter aromatic profiles from the north with the more intense notes from the south. It results in a decaffeinated blend beautifully balanced between bitter and sweet, that delivers a dense, creamy taste with bold roasty and cocoa notes. The fine grind creates a velvety crema you can’t resist.',

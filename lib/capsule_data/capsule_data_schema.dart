@@ -13,8 +13,8 @@ class CapsuleData {
     this.name = '',
     this.mainImageFileName,
     this.story = '',
-    this.caffeine,
-    this.gramsPer10Pack,
+    this.caffeine = true,
+    this.gramsPer10Pack = 0,
     this.cupSize,
     this.flavourProfile,
     this.orgin = '',
@@ -57,9 +57,12 @@ enum AromaticNotes {
   Spicy,
   Fruity,
   Floral,
+  Hazelnut,
+  Amaretti,
 }
 enum AromaticProfile {
   Bold,
+  Amaretti,
   Roasted,
   Intense,
   Creamy,
@@ -77,6 +80,7 @@ enum AromaticProfile {
   Bright,
   FullBodied,
   Spicy,
+  Cereal,
   Woody,
   Syrupy,
   ExceptionallyIntense,
@@ -94,6 +98,7 @@ enum AromaticProfile {
   Balanced,
   Light,
   Complex,
+  Hazelnut,
 }
 
 class FlavourProfile {

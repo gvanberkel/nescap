@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nescap/app_ui/capsule_details/capsule_details.dart';
 import 'package:nescap/application_state/nescap_logic.dart';
 import 'package:provider/provider.dart';
 
@@ -24,7 +23,6 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
 
   @override
   Widget build(BuildContext context) {
-    
     this.logic = widget.logic;
 
     return ChangeNotifierProvider.value(
@@ -87,6 +85,4 @@ class _CapsuleSearchDialogState extends State<CapsuleSearchDialog> {
       },
     );
   }
-
 }
-

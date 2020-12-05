@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nescap/theme/nescap_theme.dart';
-import 'package:provider/provider.dart';
-
 import 'app_ui/main_app_bootstrap.dart';
 
 void main() {

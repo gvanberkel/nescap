@@ -3,12 +3,8 @@ import 'package:nescap/app_ui/capsule_details/capsule_details.dart';
 import 'package:nescap/app_ui/settings/settings.dart';
 import 'package:nescap/application_state/nescap_logic.dart';
 import 'package:nescap/capsule_data/capsule_data.dart';
+import 'package:nescap/theme/nescap_theme.dart';
 import 'package:provider/provider.dart';
-import 'capsule_search_caffeine_content.dart';
-import 'capsule_search_cup_size.dart';
-import 'capsule_search_free_text.dart';
-import 'capsule_search_high_level_filters.dart';
-import 'capsule_search_strength.dart';
 
 class CapsuleSearch extends StatelessWidget {
   const CapsuleSearch({
@@ -40,7 +36,7 @@ class CapsuleSearch extends StatelessWidget {
                   },
                 ),
                 Text(
-                  'Explore capsules',
+                  '',
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 Spacer(flex: 1),
@@ -50,17 +46,40 @@ class CapsuleSearch extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            CapsulSearchFreeText(),
-            SizedBox(
-              height: 8,
+            Text('What coffee do you feel like?',
+                style: Theme.of(context).textTheme.headline2),
+            SizedBox(height: 32,),
+            FilterChip(
+              showCheckmark: false,
+              avatar: Row(
+                children: [
+                  Image.asset('images/cupsize/ristretto.png'),
+                  Icon(
+                    Icons.circle,
+                    color: (Colors.red.shade900),
+                  ),
+                ],
+              ),
+              
+              label: Text('Short decaf coffees'),
+              selectedColor: NesCapTheme.selectedColour,
+              selected: false,
+              onSelected: (value) {
+                logic.setFilterRistretto(value);
+              },
             ),
-            CapsuleSearchHighLevelFilters(),
-            CapsuleSearchCaffeineContent(),
-            CapsuleSearchCupSize(),
-            CapsuleSearchStrength(),
-            SizedBox(
-              height: 8,
-            ),
+SizedBox(height: 32,),
+            // CapsulSearchFreeText(),
+            // SizedBox(
+            //   height: 8,
+            // ),
+            // CapsuleSearchHighLevelFilters(),
+            // CapsuleSearchCaffeineContent(),
+            // CapsuleSearchCupSize(),
+            // CapsuleSearchStrength(),
+            // SizedBox(
+            //   height: 8,
+            // ),
             capsuleView(context, logic),
             searchButton(context, logic),
           ],
@@ -111,12 +130,11 @@ class CapsuleSearch extends StatelessWidget {
                   builder: (_) => CapsuleDetails(data: capsule),
                 );
               },
-              child:
-                  Container(
-                    width: 40,
-                    child: Image.asset(
-                      'images/capsules/${capsule.mainImageFileName}'),
-                  ),
+              child: Container(
+                width: 40,
+                child:
+                    Image.asset('images/capsules/${capsule.mainImageFileName}'),
+              ),
             ),
           )
           .toList(),
